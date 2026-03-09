@@ -5,7 +5,7 @@ export default function TentangView() {
   return (
     <div className="bg-white">
       {/* ================= HERO SECTION ================= */}
-      <section className="relative pt-10 pb-10 bg-[#2E7D32] overflow-hidden">
+      <section className="relative pt-12 pb-14 sm:pt-16 sm:pb-16 lg:pt-20 lg:pb-20 bg-[#2E7D32] overflow-hidden">
         {/* Decorative Islamic Geometric Pattern Overlay */}
         <div className="absolute inset-0 opacity-10 pointer-events-none">
           <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
@@ -23,15 +23,17 @@ export default function TentangView() {
         <div className="absolute top-0 right-0 w-64 h-64 bg-[#F0A500]/20 rounded-full -mr-32 -mt-32 blur-3xl" />
         <div className="absolute bottom-0 left-0 w-64 h-64 bg-white/10 rounded-full -ml-32 -mb-32 blur-3xl" />
 
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
           <div className="flex flex-col items-center text-center">
             <span className="text-[#F0A500] font-semibold uppercase tracking-widest text-sm mb-4">
               Tentang Kami
             </span>
-            <h1 className="text-4xl md:text-6xl font-extrabold text-white mb-6 leading-tight">
-              Membangun Ekonomi Umat<br />Berbasis <span className="text-[#F0A500]">Syariah</span>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white mb-5 sm:mb-6 leading-tight">
+              Membangun Ekonomi Umat
+              <br />
+              Berbasis <span className="text-[#F0A500]">Syariah</span>
             </h1>
-            <p className="max-w-2xl text-lg md:text-xl text-green-50/90 leading-relaxed">
+            <p className="max-w-2xl text-base sm:text-lg md:text-xl text-green-50/90 leading-relaxed">
               KSPPS Bhapedes adalah mitra terpercaya dalam pemberdayaan ekonomi melalui prinsip amanah, transparansi, dan keberlanjutan.
             </p>
           </div>
@@ -39,8 +41,8 @@ export default function TentangView() {
       </section>
 
       {/* ================= PROFIL & MAKNA ================= */}
-      <section className="py-24 bg-[#F8FAF8]">
-        <div className="max-w-7xl mx-auto px-6">
+      <section className="py-12 sm:py-16 lg:py-24 bg-[#F8FAF8]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="mb-12">
             <h2 className="text-3xl font-bold text-[#1A1A1A]">
               Profil KSPPS Bhapedes
@@ -106,15 +108,15 @@ export default function TentangView() {
       </section>
 
       {/* ================= VISI & MISI ================= */}
-      <section className="py-24 relative overflow-hidden bg-white">
-        <div className="max-w-7xl mx-auto px-6 mb-12 flex items-center justify-center flex-col text-center">
+      <section className="py-12 sm:py-16 lg:py-24 relative overflow-hidden bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 mb-10 sm:mb-12 flex items-center justify-center flex-col text-center">
           <h2 className="text-3xl font-bold text-[#1A1A1A]">
             Visi & Misi KSPPS BHAPEDES
           </h2>
           <div className="w-16 h-1 bg-[#F0A500] mt-4 rounded" />
         </div>
-        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 relative z-10">
-          <div className="bg-[#2E7D32] p-12 rounded-xl text-white shadow-xl relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 grid md:grid-cols-2 gap-8 sm:gap-12 relative z-10">
+          <div className="bg-[#2E7D32] p-6 sm:p-10 lg:p-12 rounded-xl text-white shadow-xl relative overflow-hidden">
             {/* Gold Accent */}
             <div className="absolute top-0 left-0 w-1 h-full bg-[#F0A500]" />
             <h3 className="text-3xl font-bold mb-6 flex items-center gap-3">
@@ -131,8 +133,8 @@ export default function TentangView() {
             </div>
           </div>
 
-          <div className="bg-white p-12 rounded-xl shadow-lg border border-gray-100">
-            <h3 className="text-3xl font-bold text-[#1A1A1A] mb-8 flex items-center gap-3aZ">
+          <div className="bg-white p-6 sm:p-10 lg:p-12 rounded-xl shadow-lg border border-gray-100">
+            <h3 className="text-3xl font-bold text-[#1A1A1A] mb-8 flex items-center gap-3">
               Misi
             </h3>
             <ul className="space-y-6">
@@ -158,8 +160,8 @@ export default function TentangView() {
       </section>
 
       {/* ================= STRUKTUR ORGANISASI ================= */}
-      <section className="py-24 bg-[#F8FAF8]">
-        <div className="max-w-6xl mx-auto px-6">
+      <section className="py-12 sm:py-16 lg:py-24 bg-[#F8FAF8]">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-[#1A1A1A]">
               Struktur Organisasi
@@ -258,8 +260,8 @@ export default function TentangView() {
 
 
       {/* ================= LEGALITAS & IZIN ================= */}
-      <section className="py-2 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
+      <section className="py-10 sm:py-12 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="border border-gray-300 bg-gray-50 p-10">
 
             <div className="mb-8 border-b border-gray-300 pb-4">
@@ -275,27 +277,27 @@ export default function TentangView() {
 
             <div className="space-y-4 text-gray-700">
 
-              <div className="grid grid-cols-[220px_20px_1fr]">
+              <div className="grid grid-cols-1 sm:grid-cols-[220px_20px_1fr] sm:items-start gap-1 sm:gap-0">
                 <span className="font-medium">Badan Hukum</span>
-                <span>:</span>
+                <span className="hidden sm:inline">:</span>
                 <span>No. 123/BH/KOP/1997</span>
               </div>
 
-              <div className="grid grid-cols-[220px_20px_1fr]">
+              <div className="grid grid-cols-1 sm:grid-cols-[220px_20px_1fr] sm:items-start gap-1 sm:gap-0">
                 <span className="font-medium">Nomor Induk Koperasi (NIK)</span>
-                <span>:</span>
+                <span className="hidden sm:inline">:</span>
                 <span>0000000000000</span>
               </div>
 
-              <div className="grid grid-cols-[220px_20px_1fr]">
+              <div className="grid grid-cols-1 sm:grid-cols-[220px_20px_1fr] sm:items-start gap-1 sm:gap-0">
                 <span className="font-medium">Audit & Pengawasan</span>
-                <span>:</span>
+                <span className="hidden sm:inline">:</span>
                 <span>KAP & Dewan Pengawas Syariah</span>
               </div>
 
-              <div className="grid grid-cols-[220px_20px_1fr]">
+              <div className="grid grid-cols-1 sm:grid-cols-[220px_20px_1fr] sm:items-start gap-1 sm:gap-0">
                 <span className="font-medium">Izin Operasional</span>
-                <span>:</span>
+                <span className="hidden sm:inline">:</span>
                 <span>Kementerian Koperasi & UKM RI</span>
               </div>
 
