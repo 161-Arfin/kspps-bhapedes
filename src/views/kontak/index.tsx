@@ -19,7 +19,7 @@ export default function KontakView() {
               <h2 className="text-2xl font-bold text-[#1A1A1A] mb-2">
                 Kirim Pesan
               </h2>
-              <div className="w-16 h-1 bg-[#F0A500] mb-8 rounded" />
+              <div className="w-16 h-1 bg-[#f08519] mb-8 rounded" />
               <form className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
@@ -28,7 +28,7 @@ export default function KontakView() {
                     </label>
                     <input
                       type="text"
-                      className="w-full border border-gray-300 px-4 py-2.5 rounded focus:outline-none focus:border-[#2E7D32] transition-colors"
+                      className="w-full border border-gray-300 px-4 py-2.5 rounded focus:outline-none focus:border-[#194e9e] transition-colors"
                     />
                   </div>
                   <div>
@@ -37,7 +37,7 @@ export default function KontakView() {
                     </label>
                     <input
                       type="email"
-                      className="w-full border border-gray-300 px-4 py-2.5 rounded focus:outline-none focus:border-[#2E7D32] transition-colors"
+                      className="w-full border border-gray-300 px-4 py-2.5 rounded focus:outline-none focus:border-[#194e9e] transition-colors"
                     />
                   </div>
                 </div>
@@ -49,7 +49,7 @@ export default function KontakView() {
                     </label>
                     <input
                       type="tel"
-                      className="w-full border border-gray-300 px-4 py-2.5 rounded focus:outline-none focus:border-[#2E7D32] transition-colors"
+                      className="w-full border border-gray-300 px-4 py-2.5 rounded focus:outline-none focus:border-[#194e9e] transition-colors"
                     />
                   </div>
 
@@ -57,7 +57,7 @@ export default function KontakView() {
                     <label className="block text-sm font-medium text-gray-700 mb-2">
                       Subjek
                     </label>
-                    <select className="w-full border border-gray-300 px-4 py-2.5 rounded focus:outline-none focus:border-[#2E7D32] transition-colors bg-white">
+                    <select className="w-full border border-gray-300 px-4 py-2.5 rounded focus:outline-none focus:border-[#194e9e] transition-colors bg-white">
                       <option>Informasi Simpanan</option>
                       <option>Informasi Pembiayaan</option>
                       <option>Layanan Sosial (ZISWAF)</option>
@@ -73,13 +73,13 @@ export default function KontakView() {
                   </label>
                   <textarea
                     rows={5}
-                    className="w-full border border-gray-300 px-4 py-2.5 rounded focus:outline-none focus:border-[#2E7D32] transition-colors"
+                    className="w-full border border-gray-300 px-4 py-2.5 rounded focus:outline-none focus:border-[#194e9e] transition-colors"
                   ></textarea>
                 </div>
 
                 <button
                   type="submit"
-                  className="bg-[#2E7D32] text-white px-8 py-3 rounded font-semibold hover:bg-[#1b4b1e] transition-colors"
+                  className="bg-[#194e9e] text-white px-8 py-3 rounded font-semibold hover:bg-[#1b4b1e] transition-colors"
                 >
                   Kirim Pesan
                 </button>
@@ -108,10 +108,10 @@ export default function KontakView() {
               <h3 className="text-xl font-bold text-[#1A1A1A] mb-2">
                 Kantor Pusat
               </h3>
-              <div className="w-16 h-1 bg-[#F0A500] mb-6 rounded" />
+              <div className="w-16 h-1 bg-[#f08519] mb-6 rounded" />
               <div className="space-y-6 text-sm text-gray-700">
                 <div className="flex gap-4">
-                  <MapPin className="text-[#2E7D32] shrink-0" size={20} />
+                  <MapPin className="text-[#194e9e] shrink-0" size={20} />
                   <div>
                     <p className="font-bold text-gray-900 mb-1">Alamat Kantor</p>
                     <p className="leading-relaxed">
@@ -122,7 +122,7 @@ export default function KontakView() {
                 </div>
 
                 <div className="flex gap-4">
-                  <Phone className="text-[#2E7D32] shrink-0" size={20} />
+                  <Phone className="text-[#194e9e] shrink-0" size={20} />
                   <div>
                     <p className="font-bold text-gray-900 mb-1">Telepon & WhatsApp</p>
                     <p>(0274) 1234567</p>
@@ -131,7 +131,7 @@ export default function KontakView() {
                 </div>
 
                 <div className="flex gap-4">
-                  <Mail className="text-[#2E7D32] shrink-0" size={20} />
+                  <Mail className="text-[#194e9e] shrink-0" size={20} />
                   <div>
                     <p className="font-bold text-gray-900 mb-1">Email</p>
                     <p>info@bhapedes.com</p>
@@ -145,11 +145,11 @@ export default function KontakView() {
               <h3 className="text-xl font-bold text-[#1A1A1A] mb-2">
                 Jam Pelayanan
               </h3>
-              <div className="w-16 h-1 bg-[#F0A500] mb-6 rounded" />
+              <div className="w-16 h-1 bg-[#f08519] mb-6 rounded" />
 
               <div className="space-y-4 text-sm text-gray-700">
                 <div className="flex items-center gap-3">
-                  <Clock className="text-[#2E7D32] shrink-0" size={16} />
+                  <Clock className="text-[#194e9e] shrink-0" size={16} />
                   <div className="w-full flex justify-between border-b border-gray-100 pb-2">
                     <span>Senin – Sabtu</span>
                     <span className="font-medium">08.00 – 15.00</span>

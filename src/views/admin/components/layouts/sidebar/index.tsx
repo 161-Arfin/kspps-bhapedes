@@ -64,7 +64,7 @@ export default function Sidebar({ mobileOpen, setMobileOpen }: { mobileOpen: boo
 
       <aside className={`fixed inset-y-0 left-0 z-50 w-64 bg-white border-r border-gray-200 flex flex-col transform transition-transform duration-200 ${mobileOpen ? 'translate-x-0 shadow-2xl' : '-translate-x-full'} md:translate-x-0 md:shadow-none`}>
         <div className="h-16 flex items-center px-6 border border-gray-100">
-          <Image src="/bmtfast.png" alt="Logo" width={120} height={40} />
+          <Image src="/img/bhapedes3.png" alt="Logo" width={170} height={150} />
           <button type="button" aria-label="Tutup Menu" onClick={() => setMobileOpen(false)} className="md:hidden ml-auto inline-flex h-8 w-8 items-center justify-center text-slate-600 hover:text-slate-100">
             <X className="h-4 w-4" />
           </button>

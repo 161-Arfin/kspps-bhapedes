@@ -22,19 +22,20 @@ const Footer: React.FC = () => {
     <footer className="bg-white border-t border-gray-100">
 
       {/* Gold Accent Line */}
-      <div className="h-1 bg-[#F0A500]" />
+      <div className="h-1 bg-[#194e9e]" />
 
-      <div className="max-w-7xl mx-auto px-6 py-10">
+      <div className="max-w-7xl mx-auto px-6 py-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-24">
 
           {/* Brand */}
           <div>
             <Image
-              src="/img/bhapedes1.png"
+              src="/img/bhapedes3.png"
               alt="KSPPS Bhapedes"
-              width={200}
-              height={200}
-              className="mb-5 object-contain"
+              width={230}
+              height={230}
+              className="object-contain"
+              priority
             />
             <p className="text-sm text-gray-600 leading-relaxed">
               KSPPS Bhakti Pemuda Desa adalah lembaga keuangan mikro syariah
@@ -45,7 +46,7 @@ const Footer: React.FC = () => {
 
           {/* Navigation */}
           <div>
-            <h3 className="text-sm font-bold text-[#2E7D32] mb-5 uppercase tracking-wide">
+            <h3 className="text-sm font-bold text-[#194e9e] mb-5 uppercase tracking-wide">
               Navigasi
             </h3>
             <ul className="space-y-3 text-sm">
@@ -53,7 +54,7 @@ const Footer: React.FC = () => {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-gray-600 hover:text-[#2E7D32] transition-colors"
+                    className="text-gray-600 hover:text-[#194e9e] transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -64,14 +65,14 @@ const Footer: React.FC = () => {
 
           {/* Contact */}
           <div>
-            <h3 className="text-sm font-bold text-[#2E7D32] mb-5 uppercase tracking-wide">
+            <h3 className="text-sm font-bold text-[#194e9e] mb-5 uppercase tracking-wide">
               Kontak
             </h3>
             <ul className="space-y-3 text-sm text-gray-600">
               <li>Jl. Contoh No. 123, Jakarta</li>
               <li>Telp: 0812-3456-7890</li>
               <li className="flex items-center gap-3">
-                <Mail size={18} className="text-[#F0A500]" />
+                <Mail size={18} className="text-[#194e9e]" />
                 <span>info@bhapedes.co.id</span>
               </li>
               <li>Senin - Jumat (08.00 - 16.00 WIB)</li>

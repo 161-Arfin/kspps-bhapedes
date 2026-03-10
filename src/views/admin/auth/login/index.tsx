@@ -54,12 +54,12 @@ export default function LoginView() {
 
         {/* Left Side - Branding */}
         <div className="hidden lg:flex flex-col justify-center bg-slate-700 px-12 text-white">
-          <div className="mb-2">
+          <div className="mb-12">
             <Image
-              src="/bmtnb.png"
-              alt="Logo BMT Nurul Barakah"
-              width={160}
-              height={50}
+              src="/img/bhapedes.png"
+              alt="KSPPS BHAPEDES"
+              width={100}
+              height={100}
               className="brightness-0 invert"
               priority
             />
@@ -75,7 +75,7 @@ export default function LoginView() {
           </p>
 
           <div className="mt-10 text-xs text-white border-t border-white pt-6">
-            © {new Date().getFullYear()} BMT Nurul Barakah
+            ©{new Date().getFullYear()} KSPPS BHAPEDES. All rights reserved.
           </div>
         </div>
 

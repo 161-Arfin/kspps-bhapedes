@@ -13,15 +13,15 @@ export default function SimpananPelajarView() {
     <div className="bg-white min-h-screen">
 
       {/* ================= HERO ================= */}
-      <section className="bg-[#2E7D32] py-12 text-white">
+      <section className="bg-[#194e9e] py-12 text-white">
         <div className="max-w-7xl mx-auto px-6">
 
           <nav className="flex items-center gap-2 text-sm font-semibold uppercase text-green-200 mb-6">
-            <Link href="/" className="text-white hover:text-[#F0A500]">
+            <Link href="/" className="text-white hover:text-[#f08519]">
               Beranda
             </Link>
             <ChevronRight size={12} />
-            <span className="text-[#F0A500] font-semibold">
+            <span className="text-[#f08519] font-semibold">
               Simpanan Pelajar
             </span>
           </nav>
@@ -49,15 +49,15 @@ export default function SimpananPelajarView() {
               alt="Simpanan Pelajar"
               className="rounded-lg shadow-md border border-gray-200 w-full object-cover"
             />
-            <div className="absolute -bottom-4 -right-4 w-20 h-20 border-b-4 border-r-4 border-[#F0A500] rounded-br-lg" />
+            <div className="absolute -bottom-4 -right-4 w-20 h-20 border-b-4 border-r-4 border-[#f08519] rounded-br-lg" />
           </div>
 
           {/* TEXT */}
           <div>
             <h2 className="text-3xl font-bold text-[#1A1A1A] mb-4">
-              Apa itu <span className="text-[#F0A500]">Simpanan Pelajar?</span>
+              Apa itu <span className="text-[#f08519]">Simpanan Pelajar?</span>
             </h2>
-            <div className="w-16 h-1 bg-[#2E7D32] mb-6 rounded" />
+            <div className="w-16 h-1 bg-[#194e9e] mb-6 rounded" />
             <p className="text-gray-600 leading-relaxed mb-4">
               Simpanan Pelajar merupakan produk tabungan yang diperuntukkan
               khusus bagi siswa atau pelajar sebagai sarana belajar
@@ -88,13 +88,13 @@ export default function SimpananPelajarView() {
             <h2 className="text-3xl font-bold text-[#1A1A1A]">
               Keunggulan Simpanan Pelajar
             </h2>
-            <div className="w-16 h-1 bg-[#F0A500] mx-auto mt-2 rounded" />
+            <div className="w-16 h-1 bg-[#f08519] mx-auto mt-2 rounded" />
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
 
             <div className="bg-white p-6 rounded-lg border border-gray-100 shadow-sm text-center">
-              <HandCoins className="mx-auto text-[#2E7D32] mb-4" size={32} />
+              <HandCoins className="mx-auto text-[#194e9e] mb-4" size={32} />
               <h3 className="font-bold text-gray-800 mb-2">
                 Setoran Ringan
               </h3>
@@ -105,7 +105,7 @@ export default function SimpananPelajarView() {
             </div>
 
             <div className="bg-white p-6 rounded-lg border border-gray-100 shadow-sm text-center">
-              <ShieldCheck className="mx-auto text-[#2E7D32] mb-4" size={32} />
+              <ShieldCheck className="mx-auto text-[#194e9e] mb-4" size={32} />
               <h3 className="font-bold text-gray-800 mb-2">
                 Aman & Syariah
               </h3>
@@ -116,7 +116,7 @@ export default function SimpananPelajarView() {
             </div>
 
             <div className="bg-white p-6 rounded-lg border border-gray-100 shadow-sm text-center">
-              <Users className="mx-auto text-[#2E7D32] mb-4" size={32} />
+              <Users className="mx-auto text-[#194e9e] mb-4" size={32} />
               <h3 className="font-bold text-gray-800 mb-2">
                 Edukasi Finansial
               </h3>

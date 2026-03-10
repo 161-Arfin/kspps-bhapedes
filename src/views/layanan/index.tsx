@@ -19,22 +19,22 @@ const ziswafItems = [
   {
     title: "Zakat",
     desc: "Tunaikan kewajiban zakat mal maupun zakat fitrah Anda untuk menyucikan harta dan membantu asnaf yang membutuhkan.",
-    icon: <CheckCircle2 className="mx-auto text-[#2E7D32] mb-4" size={32} />
+    icon: <CheckCircle2 className="mx-auto text-[#194e9e] mb-4" size={32} />
   },
   {
     title: "Infaq",
     desc: "Berikan kontribusi terbaik untuk kemaslahatan umat melalui program-program sosial yang berkelanjutan.",
-    icon: <Heart className="mx-auto text-[#2E7D32] mb-4" size={32} />
+    icon: <Heart className="mx-auto text-[#194e9e] mb-4" size={32} />
   },
   {
     title: "Shadaqah",
     desc: "Amalan sunnah yang membawa keberkahan, mulai dari senyuman hingga bantuan materi bagi sesama.",
-    icon: <Gift className="mx-auto text-[#2E7D32] mb-4" size={32} />
+    icon: <Gift className="mx-auto text-[#194e9e] mb-4" size={32} />
   },
   {
     title: "Wakaf",
     desc: "Investasi akhirat dengan manfaat yang terus mengalir melalui pengelolaan aset produktif untuk umat.",
-    icon: <Sprout className="mx-auto text-[#2E7D32] mb-4" size={32} />
+    icon: <Sprout className="mx-auto text-[#194e9e] mb-4" size={32} />
   }
 ];
 
@@ -42,25 +42,25 @@ const socialPrograms = [
   {
     title: "Pendidikan Umat",
     desc: "Beasiswa dan sarana belajar bagi anak-anak dhuafa berprestasi untuk masa depan yang lebih baik.",
-    icon: <BookOpen className="text-[#2E7D32] mb-4" size={40} />,
+    icon: <BookOpen className="text-[#194e9e] mb-4" size={40} />,
     stats: "500+ Penerima Manfaat"
   },
   {
     title: "Kesehatan Terpadu",
     desc: "Layanan kesehatan gratis dan subsidi bagi anggota dan masyarakat yang membutuhkan.",
-    icon: <Stethoscope className="text-[#2E7D32] mb-4" size={40} />,
+    icon: <Stethoscope className="text-[#194e9e] mb-4" size={40} />,
     stats: "20+ Lokasi Layanan"
   },
   {
     title: "Ekonomi Produktif",
     desc: "Pemberdayaan UMKM melalui modal kerja dan pendampingan usaha berbasis komunitas.",
-    icon: <Briefcase className="text-[#2E7D32] mb-4" size={40} />,
+    icon: <Briefcase className="text-[#194e9e] mb-4" size={40} />,
     stats: "100+ UMKM Binaan"
   },
   {
     title: "Bantuan Kemanusiaan",
     desc: "Tanggap darurat bencana dan bantuan sosial mendesak bagi korban bencana alam.",
-    icon: <AlertCircle className="text-[#2E7D32] mb-4" size={40} />,
+    icon: <AlertCircle className="text-[#194e9e] mb-4" size={40} />,
     stats: "Quick Response Team"
   }
 ];
@@ -101,29 +101,7 @@ export default function LayananView() {
 
   return (
     <div className="bg-white min-h-screen">
-      {/* ================= HERO SECTION ================= */}
-      {/* <section className="bg-[#2E7D32] py-12 text-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <nav className="flex items-center gap-2 text-sm font-semibold uppercase text-green-200 mb-6">
-            <Link href="/" className="text-white hover:text-[#F0A500]">
-              Beranda
-            </Link>
-            <ChevronRight size={12} />
-            <span className="text-[#F0A500] font-semibold">
-              Layanan Sosial
-            </span>
-          </nav>
-
-          <h1 className="text-4xl md:text-5xl font-bold">
-            Layanan Sosial (ZISWAF)
-          </h1>
-
-          <p className="mt-4 max-w-2xl text-green-100 leading-relaxed">
-            Wujudkan kepedulian Anda bersama KSPPS BHAPEDES melalui pengelolaan Zakat, Infaq, Shadaqah, dan Wakaf yang profesional dan tepat sasaran.
-          </p>
-        </div>
-      </section> */}
-      <section className="relative pt-10 pb-10 bg-[#2E7D32] overflow-hidden">
+      <section className="relative pt-10 pb-10 bg-[#194e9e] overflow-hidden">
         {/* Decorative Islamic Geometric Pattern Overlay */}
         <div className="absolute inset-0 opacity-10 pointer-events-none">
           <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
@@ -138,16 +116,16 @@ export default function LayananView() {
         </div>
 
         {/* Decorative blobs */}
-        <div className="absolute top-0 right-0 w-64 h-64 bg-[#F0A500]/20 rounded-full -mr-32 -mt-32 blur-3xl" />
+        <div className="absolute top-0 right-0 w-64 h-64 bg-[#f08519]/20 rounded-full -mr-32 -mt-32 blur-3xl" />
         <div className="absolute bottom-0 left-0 w-64 h-64 bg-white/10 rounded-full -ml-32 -mb-32 blur-3xl" />
 
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="flex flex-col items-center text-center">
-            <span className="text-[#F0A500] font-semibold uppercase tracking-widest text-sm mb-4">
+            <span className="text-[#f08519] font-semibold uppercase tracking-widest text-sm mb-4">
               Layanan Sosial
             </span>
             <h1 className="text-4xl md:text-6xl font-extrabold text-white mb-6 leading-tight">
-              Peduli Sesama Bersama Bhapedes Melalui <span className="text-[#F0A500]">ZISWAF</span>
+              Peduli Sesama Bersama Bhapedes Melalui <span className="text-[#f08519]">ZISWAF</span>
             </h1>
             <p className="max-w-2xl text-lg md:text-xl text-green-50/90 leading-relaxed">
               Wujudkan kepedulian Anda bersama KSPPS BHAPEDES melalui pengelolaan Zakat, Infaq, Shadaqah, dan Wakaf yang profesional dan tepat sasaran.
@@ -163,7 +141,7 @@ export default function LayananView() {
             <h2 className="text-3xl font-bold text-[#1A1A1A]">
               Program ZISWAF
             </h2>
-            <div className="w-16 h-1 bg-[#F0A500] mx-auto mt-4 rounded" />
+            <div className="w-16 h-1 bg-[#f08519] mx-auto mt-4 rounded" />
           </div>
 
           <div className="grid md:grid-cols-4 gap-6">
@@ -190,7 +168,7 @@ export default function LayananView() {
             <h2 className="text-3xl font-bold text-[#1A1A1A]">
               Program Pemberdayaan
             </h2>
-            <div className="w-16 h-1 bg-[#2E7D32] mx-auto mt-4 rounded" />
+            <div className="w-16 h-1 bg-[#194e9e] mx-auto mt-4 rounded" />
             <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
               Komitmen kami dalam menyalurkan dana sosial melalui program
               yang memberikan dampak nyata dan berkelanjutan.
@@ -216,7 +194,7 @@ export default function LayananView() {
                     <span className="text-gray-500">
                       Capaian Program
                     </span>
-                    <span className="font-bold text-[#2E7D32]">
+                    <span className="font-bold text-[#194e9e]">
                       {program.stats}
                     </span>
                   </div>
@@ -232,9 +210,9 @@ export default function LayananView() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-[#1A1A1A] mb-4">
-              Dokumentasi & <span className="text-[#F0A500]">Dampak Sosial</span>
+              Dokumentasi & <span className="text-[#f08519]">Dampak Sosial</span>
             </h2>
-            <div className="w-16 h-1 bg-[#2E7D32] mx-auto mt-2 mb-4 rounded" />
+            <div className="w-16 h-1 bg-[#194e9e] mx-auto mt-2 mb-4 rounded" />
             <p className="text-gray-600 max-w-2xl mx-auto">
               Setiap rupiah yang Anda amanahkan dikelola dengan transparan untuk memberikan manfaat nyata bagi yang membutuhkan.
             </p>
@@ -256,7 +234,7 @@ export default function LayananView() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
                     <div className="absolute bottom-0 left-0 p-8 text-white">
-                      <span className="inline-flex items-center px-3 py-1 bg-[#2E7D32] text-xs font-bold rounded-full mb-4 uppercase tracking-wider text-white">
+                      <span className="inline-flex items-center px-3 py-1 bg-[#194e9e] text-xs font-bold rounded-full mb-4 uppercase tracking-wider text-white">
                         {slide.tag}
                       </span>
                       <h3 className="text-2xl font-bold mb-2">{slide.title}</h3>
@@ -288,7 +266,7 @@ export default function LayananView() {
                   <button
                     key={i}
                     onClick={() => setCurrentSlide(i)}
-                    className={`h-1.5 rounded-full transition-all ${i === currentSlide ? "bg-[#F0A500] w-6" : "bg-white/40 w-2"}`}
+                    className={`h-1.5 rounded-full transition-all ${i === currentSlide ? "bg-[#f08519] w-6" : "bg-white/40 w-2"}`}
                   />
                 ))}
               </div>
@@ -329,7 +307,7 @@ export default function LayananView() {
               <h2 className="text-3xl font-bold text-[#1A1A1A] mb-4">
                 Cara Menyalurkan Donasi
               </h2>
-              <div className="w-16 h-1 bg-[#F0A500] mb-8 rounded" />
+              <div className="w-16 h-1 bg-[#f08519] mb-8 rounded" />
               <div className="space-y-6">
                 {[
                   { title: "Kunjungi Kantor Cabang", desc: "Anda dapat langsung datang ke kantor cabang KSPPS BHAPEDES terdekat di kota Anda." },
@@ -337,7 +315,7 @@ export default function LayananView() {
                   { title: "Layanan Jemput Zakat", desc: "Tim kami siap menjemput donasi Anda untuk wilayah tertentu demi kenyamanan Anda." }
                 ].map((step, idx) => (
                   <div key={idx} className="flex gap-4">
-                    <div className="w-10 h-10 rounded-full bg-[#2E7D32] text-white flex items-center justify-center font-bold shrink-0">
+                    <div className="w-10 h-10 rounded-full bg-[#194e9e] text-white flex items-center justify-center font-bold shrink-0">
                       {idx + 1}
                     </div>
                     <div>
@@ -349,7 +327,7 @@ export default function LayananView() {
               </div>
             </div>
 
-            {/* <div className="bg-[#2E7D32] p-10 rounded-xl shadow-lg text-white relative overflow-hidden">
+            {/* <div className="bg-[#194e9e] p-10 rounded-xl shadow-lg text-white relative overflow-hidden">
               <div className="absolute top-0 right-0 p-4 opacity-10">
                 <Users size={120} />
               </div>
@@ -370,7 +348,7 @@ export default function LayananView() {
                 </div>
                 <Link
                   href="/kontak"
-                  className="inline-block w-full text-center py-3 bg-[#F0A500] hover:bg-[#d69300] text-white font-bold rounded-lg transition duration-300"
+                  className="inline-block w-full text-center py-3 bg-[#f08519] hover:bg-[#d69300] text-white font-bold rounded-lg transition duration-300"
                 >
                   Hubungi Sekarang
                 </Link>
@@ -391,7 +369,7 @@ export default function LayananView() {
               { label: "Kota/Kabupaten", val: "12" }
             ].map((stat, idx) => (
               <div key={idx}>
-                <div className="text-3xl font-extrabold text-[#2E7D32]">{stat.val}</div>
+                <div className="text-3xl font-extrabold text-[#194e9e]">{stat.val}</div>
                 <div className="text-xs text-gray-500 uppercase tracking-widest mt-2">{stat.label}</div>
               </div>
             ))}

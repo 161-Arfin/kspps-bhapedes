@@ -1,6 +1,6 @@
 import { Hero } from "@/types";
 
-const STORAGE_KEY = 'bmt_fast_hero';
+const STORAGE_KEY = 'bhapedes_hero';
 
 // Default data based on HomeView
 const DEFAULT_HERO: Hero[] = [
@@ -63,7 +63,8 @@ export const heroService = {
     };
 
     if (typeof window !== 'undefined') {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify([newHero, ...allHero]));
+      const newData = [newHero, ...allHero].slice(0, 5);
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(newData));
     }
     return newHero;
   },

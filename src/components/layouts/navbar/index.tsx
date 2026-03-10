@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import Link from 'next/link';
-import { useRouter } from 'next/router';
-import Image from 'next/image';
-import { ChevronDown, Menu, X, Mail } from 'lucide-react';
+import React, { useState, useEffect } from "react";
+import Link from "next/link";
+import { useRouter } from "next/router";
+import Image from "next/image";
+import { ChevronDown, Menu, X, Mail } from "lucide-react";
 
 interface NavItem {
   label: string;
@@ -11,21 +11,21 @@ interface NavItem {
 }
 
 const navItems: NavItem[] = [
-  { label: 'Beranda', href: '/' },
-  { label: 'Tentang Kami', href: '/tentang' },
-  { label: 'Layanan Sosial', href: '/layanan' },
+  { label: "Beranda", href: "/" },
+  { label: "Tentang Kami", href: "/tentang" },
+  { label: "Layanan Sosial", href: "/layanan" },
   {
-    label: 'Produk',
-    href: '/produk',
+    label: "Produk",
+    href: "/produk",
     children: [
-      { label: 'Simpanan Pelajar', href: '/produk/simpanan-pelajar' },
-      { label: 'Simpanan Walimah', href: '/produk/simpanan-walimah' },
-      { label: 'Rahn/Gadai', href: '/produk/rahn-gadai' },
-      { label: 'Investasi Emas', href: '/produk/invest-emas' },
+      { label: "Simpanan Pelajar", href: "/produk/simpanan-pelajar" },
+      { label: "Simpanan Walimah", href: "/produk/simpanan-walimah" },
+      { label: "Rahn/Gadai", href: "/produk/rahn-gadai" },
+      { label: "Investasi Emas", href: "/produk/invest-emas" },
     ],
   },
-  { label: 'Berita', href: '/berita' },
-  { label: 'Kontak', href: '/kontak' },
+  { label: "Berita", href: "/berita" },
+  { label: "Kontak", href: "/kontak" },
 ];
 
 export default function Navbar() {
@@ -47,38 +47,39 @@ export default function Navbar() {
     setMounted(true);
   }, []);
 
-  const formattedDate = currentTime.toLocaleDateString('id-ID', {
-    weekday: 'long',
-    day: 'numeric',
-    month: 'long',
-    year: 'numeric',
+  const formattedDate = currentTime.toLocaleDateString("id-ID", {
+    weekday: "long",
+    day: "numeric",
+    month: "long",
+    year: "numeric",
   });
 
-  const formattedTime = currentTime.toLocaleTimeString('id-ID');
+  const formattedTime = currentTime.toLocaleTimeString("id-ID");
 
   const isActive = (href: string) => {
-    if (href === '/') return router.pathname === '/';
+    if (href === "/") return router.pathname === "/";
     return router.pathname.startsWith(href);
   };
 
   return (
     <header className="sticky top-0 z-50 bg-white border-b border-gray-200">
-
       {/* TOP BAR */}
-      <div className="bg-[#1B5E20] text-white text-xs">
+      <div className="bg-[#194e9e] text-white text-xs">
         <div className="max-w-7xl mx-auto px-4 h-9 flex items-center justify-between">
-
           <span className="hidden md:block font-medium">
             {mounted && `${formattedDate} | ${formattedTime} WIB`}
           </span>
 
           <div className="flex items-center gap-4">
-            <a href="tel:081234567890" className="font-semibold hover:underline">
+            <a
+              href="tel:081234567890"
+              className="font-semibold hover:underline"
+            >
               +62 812-3456-7890
             </a>
 
             <div className="flex items-center gap-2">
-              <Mail size={14} className="text-[#F0A500]" />
+              <Mail size={14} className="text-[#f08519]" />
               <a
                 href="mailto:info@bhapedes.co.id"
                 className="font-semibold hover:underline"
@@ -94,15 +95,14 @@ export default function Navbar() {
       <nav className="bg-white">
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex items-center justify-between h-20">
-
             {/* LOGO */}
             <Link href="/" className="flex items-center gap-3 group">
               <div className="relative flex items-center">
                 <Image
-                  src="/img/bhapedes1.png"
+                  src="/img/bhapedes3.png"
                   alt="KSPPS BHAPEDES"
-                  width={200}
-                  height={200}
+                  width={230}
+                  height={230}
                   className="object-contain"
                   priority
                 />
@@ -121,10 +121,11 @@ export default function Navbar() {
                   {item.children ? (
                     <>
                       <button
-                        className={`flex items-center gap-1 text-sm font-semibold transition-colors ${isActive(item.href)
-                          ? 'text-[#2E7D32] border-b-2 border-[#F0A500] pb-1'
-                          : 'text-gray-700 hover:text-[#2E7D32]'
-                          }`}
+                        className={`flex items-center gap-1 text-sm font-semibold transition-colors ${
+                          isActive(item.href)
+                            ? "text-[#194e9e] border-b-2 border-[#f08519] pb-1"
+                            : "text-gray-700 hover:text-[#194e9e]"
+                        }`}
                       >
                         {item.label}
                         <ChevronDown size={16} />
@@ -137,10 +138,11 @@ export default function Navbar() {
                               <Link
                                 key={child.label}
                                 href={child.href}
-                                className={`block px-4 py-3 text-sm transition-colors ${isActive(child.href)
-                                  ? 'text-[#2E7D32] bg-green-50 font-semibold'
-                                  : 'text-gray-700 hover:bg-gray-50 hover:text-[#2E7D32]'
-                                  }`}
+                                className={`block px-4 py-3 text-sm transition-colors ${
+                                  isActive(child.href)
+                                    ? "text-[#194e9e] bg-blue-50 font-semibold"
+                                    : "text-gray-700 hover:bg-gray-50 hover:text-[#194e9e]"
+                                }`}
                               >
                                 {child.label}
                               </Link>
@@ -152,10 +154,11 @@ export default function Navbar() {
                   ) : (
                     <Link
                       href={item.href}
-                      className={`text-sm font-semibold ${isActive(item.href)
-                        ? 'text-[#2E7D32] border-b-2 border-[#F0A500] pb-1'
-                        : 'text-gray-700 hover:text-[#2E7D32]'
-                        }`}
+                      className={`text-sm font-semibold ${
+                        isActive(item.href)
+                          ? "text-[#194e9e] border-b-2 border-[#f08519] pb-1"
+                          : "text-gray-700 hover:text-[#194e9e]"
+                      }`}
                     >
                       {item.label}
                     </Link>
@@ -172,7 +175,6 @@ export default function Navbar() {
             >
               {mobileOpen ? <X size={26} /> : <Menu size={26} />}
             </button>
-
           </div>
         </div>
 
@@ -187,7 +189,7 @@ export default function Navbar() {
                       <button
                         onClick={() =>
                           setOpenDropdown(
-                            openDropdown === item.label ? null : item.label
+                            openDropdown === item.label ? null : item.label,
                           )
                         }
                         className="w-full flex justify-between items-center py-3 text-sm font-semibold text-gray-700"
@@ -195,21 +197,23 @@ export default function Navbar() {
                         {item.label}
                         <ChevronDown
                           size={16}
-                          className={`transition-transform ${openDropdown === item.label ? 'rotate-180' : ''
-                            }`}
+                          className={`transition-transform ${
+                            openDropdown === item.label ? "rotate-180" : ""
+                          }`}
                         />
                       </button>
 
                       {openDropdown === item.label && (
-                        <div className="ml-4 border-l-2 border-[#F0A500]">
+                        <div className="ml-4 border-l-2 border-[#f08519]">
                           {item.children.map((child) => (
                             <Link
                               key={child.label}
                               href={child.href}
-                              className={`block px-4 py-2 text-sm ${isActive(child.href)
-                                ? 'text-[#2E7D32] font-semibold'
-                                : 'text-gray-600 hover:text-[#2E7D32]'
-                                }`}
+                              className={`block px-4 py-2 text-sm ${
+                                isActive(child.href)
+                                  ? "text-[#194e9e] font-semibold"
+                                  : "text-gray-600 hover:text-[#194e9e]"
+                              }`}
                               onClick={() => setMobileOpen(false)}
                             >
                               {child.label}
@@ -221,10 +225,11 @@ export default function Navbar() {
                   ) : (
                     <Link
                       href={item.href}
-                      className={`block py-3 text-sm font-semibold ${isActive(item.href)
-                        ? 'text-[#2E7D32]'
-                        : 'text-gray-700 hover:text-[#2E7D32]'
-                        }`}
+                      className={`block py-3 text-sm font-semibold ${
+                        isActive(item.href)
+                          ? "text-[#194e9e]"
+                          : "text-gray-700 hover:text-[#194e9e]"
+                      }`}
                       onClick={() => setMobileOpen(false)}
                     >
                       {item.label}

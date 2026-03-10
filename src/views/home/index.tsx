@@ -120,7 +120,7 @@ export default function HomeView() {
               key={i}
               onClick={() => setCurrentSlide(i)}
               className={`h-2 rounded-full transition-all ${i === currentSlide
-                ? "bg-[#F0A500] w-8"
+                ? "bg-[#f08519] w-8"
                 : "bg-white/60 w-3"
                 }`}
             />
@@ -134,8 +134,8 @@ export default function HomeView() {
       <section className="pt-20 pb-2 bg-white border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-6">
           <h2 className="text-xl md:text-3xl font-bold text-[#1A1A1A] text-center uppercase tracking-tight">
-            Perkembangan <span className="text-[#F0A500]">KSPPS BHAPEDES</span>
-            <div className="w-30 h-1 bg-[#2E7D32] mx-auto mt-4" />
+            Perkembangan <span className="text-[#f08519]">KSPPS BHAPEDES</span>
+            <div className="w-30 h-1 bg-[#194e9e] mx-auto mt-4" />
           </h2>
           <div className="grid grid-cols-4">
 
@@ -153,13 +153,13 @@ export default function HomeView() {
                   )}
 
                   {/* Icon */}
-                  <div className="text-[#2E7D32] h-10 md:h-24 flex items-center justify-center mb-1 md:mb-4">
+                  <div className="text-[#194e9e] h-10 md:h-24 flex items-center justify-center mb-1 md:mb-4">
                     <Icon className="w-8 h-8 md:w-20 md:h-20" strokeWidth={1.5} />
                   </div>
 
                   {/* Number */}
                   <div className="h-8 md:h-12 flex items-center justify-center mb-2">
-                    <div className="text-xl md:text-4xl font-bold text-[#F0A500]">
+                    <div className="text-xl md:text-4xl font-bold text-[#f08519]">
                       <Counter value={item.value} noFormat={item.noFormat} />
                     </div>
                   </div>
@@ -186,7 +186,7 @@ export default function HomeView() {
 
           {/* TEXT */}
           <div>
-            <span className="text-[#F0A500] font-semibold uppercase tracking-wider text-sm">
+            <span className="text-[#f08519] font-semibold uppercase tracking-wider text-sm">
               Tentang Bhapedes
             </span>
 
@@ -203,11 +203,11 @@ export default function HomeView() {
             </p>
 
             {/* Gold accent bar */}
-            <div className="w-12 h-1 bg-[#F0A500] mt-2 mb-6 rounded" />
+            <div className="w-12 h-1 bg-[#f08519] mt-2 mb-6 rounded" />
 
             <Link
               href="/tentang"
-              className="inline-flex items-center gap-2 bg-[#2E7D32] text-white px-6 py-3 rounded-md font-semibold hover:bg-[#1B5E20] transition"
+              className="inline-flex items-center gap-2 bg-[#194e9e] text-white px-6 py-3 rounded-md font-semibold hover:bg-[#1B5E20] transition"
             >
               Baca Selengkapnya <ArrowRight className="w-4 h-4" />
             </Link>
@@ -216,8 +216,8 @@ export default function HomeView() {
           {/* IMAGE */}
           <div className="relative w-full max-w-2xl">
             {/* Gold accent corner */}
-            <div className="absolute -top-3 -left-3 w-16 h-16 border-t-4 border-l-4 border-[#F0A500] rounded-tl-md z-10" />
-            <div className="absolute -bottom-3 -right-3 w-16 h-16 border-b-4 border-r-4 border-[#F0A500] rounded-br-md z-10" />
+            <div className="absolute -top-3 -left-3 w-16 h-16 border-t-4 border-l-4 border-[#f08519] rounded-tl-md z-10" />
+            <div className="absolute -bottom-3 -right-3 w-16 h-16 border-b-4 border-r-4 border-[#f08519] rounded-br-md z-10" />
             <img
               src="/img/assets/kantor.png"
               alt="Kegiatan Bhapedes"
@@ -236,13 +236,13 @@ export default function HomeView() {
 
           {/* Header */}
           <div className="text-center mb-12">
-            <span className="text-sm font-semibold uppercase tracking-widest text-[#F0A500]">
+            <span className="text-sm font-semibold uppercase tracking-widest text-[#f08519]">
               Apa yang Kami Tawarkan
             </span>
             <h2 className="text-3xl md:text-4xl font-bold text-[#1A1A1A] mt-2">
               Produk & Layanan
             </h2>
-            <div className="w-20 h-1 bg-[#F0A500] mx-auto mt-2 rounded" />
+            <div className="w-20 h-1 bg-[#f08519] mx-auto mt-2 rounded" />
             <p className="text-gray-500 mt-2 max-w-xl mx-auto text-sm leading-relaxed">
               Berbagai layanan keuangan syariah yang dirancang untuk memenuhi kebutuhan anggota
               secara aman, transparan, dan sesuai prinsip Islam.
@@ -263,12 +263,12 @@ export default function HomeView() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
               </div>
               <div className="p-6">
-                <div className="w-8 h-1 bg-[#2E7D32] rounded mb-3" />
+                <div className="w-8 h-1 bg-[#194e9e] rounded mb-3" />
                 <h3 className="text-lg font-bold text-[#1A1A1A] mb-2">Simpanan Pelajar</h3>
                 <p className="text-gray-500 text-sm leading-relaxed mb-4">
                   Tabungan khusus pelajar berbasis syariah untuk membangun kebiasaan menabung sejak dini dengan akad yang aman dan transparan.
                 </p>
-                <Link href="/produk/simpanan-pelajar" className="inline-flex items-center gap-1 text-sm text-[#2E7D32] font-semibold hover:text-[#F0A500] transition">
+                <Link href="/produk/simpanan-pelajar" className="inline-flex items-center gap-1 text-sm text-[#194e9e] font-semibold hover:text-[#f08519] transition">
                   Selengkapnya <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
@@ -285,12 +285,12 @@ export default function HomeView() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
               </div>
               <div className="p-6">
-                <div className="w-8 h-1 bg-[#2E7D32] rounded mb-3" />
+                <div className="w-8 h-1 bg-[#194e9e] rounded mb-3" />
                 <h3 className="text-lg font-bold text-[#1A1A1A] mb-2">Simpanan Walimah</h3>
                 <p className="text-gray-500 text-sm leading-relaxed mb-4">
                   Simpanan rencana pernikahan berbasis syariah yang membantu anggota mempersiapkan biaya walimah dengan terencana dan barokah.
                 </p>
-                <Link href="/produk/simpanan-walimah" className="inline-flex items-center gap-1 text-sm text-[#2E7D32] font-semibold hover:text-[#F0A500] transition">
+                <Link href="/produk/simpanan-walimah" className="inline-flex items-center gap-1 text-sm text-[#194e9e] font-semibold hover:text-[#f08519] transition">
                   Selengkapnya <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
@@ -307,12 +307,12 @@ export default function HomeView() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
               </div>
               <div className="p-6">
-                <div className="w-8 h-1 bg-[#2E7D32] rounded mb-3" />
+                <div className="w-8 h-1 bg-[#194e9e] rounded mb-3" />
                 <h3 className="text-lg font-bold text-[#1A1A1A] mb-2">Gadai Syariah</h3>
                 <p className="text-gray-500 text-sm leading-relaxed mb-4">
                   Solusi pembiayaan cepat dengan jaminan barang berharga menggunakan akad rahn yang sesuai prinsip syariah dan tanpa bunga.
                 </p>
-                <Link href="/produk/rahn-gadai" className="inline-flex items-center gap-1 text-sm text-[#2E7D32] font-semibold hover:text-[#F0A500] transition">
+                <Link href="/produk/rahn-gadai" className="inline-flex items-center gap-1 text-sm text-[#194e9e] font-semibold hover:text-[#f08519] transition">
                   Selengkapnya <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
@@ -329,12 +329,12 @@ export default function HomeView() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
               </div>
               <div className="p-6">
-                <div className="w-8 h-1 bg-[#2E7D32] rounded mb-3" />
+                <div className="w-8 h-1 bg-[#194e9e] rounded mb-3" />
                 <h3 className="text-lg font-bold text-[#1A1A1A] mb-2">Investasi Emas</h3>
                 <p className="text-gray-500 text-sm leading-relaxed mb-4">
                   Layanan cicil dan tabung emas secara syariah sebagai instrumen investasi yang aman, nilainya stabil, dan bebas riba.
                 </p>
-                <Link href="/produk/invest-emas" className="inline-flex items-center gap-1 text-sm text-[#2E7D32] font-semibold hover:text-[#F0A500] transition">
+                <Link href="/produk/invest-emas" className="inline-flex items-center gap-1 text-sm text-[#194e9e] font-semibold hover:text-[#f08519] transition">
                   Selengkapnya <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
@@ -351,7 +351,7 @@ export default function HomeView() {
             {/* IMAGE */}
             <div className="rounded-xl overflow-hidden shadow-md relative">
               {/* Gold corner accent */}
-              <div className="absolute top-0 left-0 w-full h-1 bg-[#F0A500] z-10" />
+              <div className="absolute top-0 left-0 w-full h-1 bg-[#f08519] z-10" />
               <img
                 src="/img/assets/layanansosial.jpg"
                 alt="Layanan Sosial Bhapedes"
@@ -361,14 +361,14 @@ export default function HomeView() {
 
             {/* CONTENT */}
             <div>
-              <span className="text-[#F0A500] font-semibold uppercase tracking-wider text-sm">
+              <span className="text-[#f08519] font-semibold uppercase tracking-wider text-sm">
                 Layanan Sosial
               </span>
               <h2 className="text-3xl md:text-4xl font-bold text-[#1A1A1A] mt-2 mb-2 leading-tight">
                 Menebar Manfaat Melalui
                 Pengelolaan Dana Sosial Umat
               </h2>
-              <div className="w-18 h-1 bg-[#F0A500] mb-6 rounded" />
+              <div className="w-18 h-1 bg-[#f08519] mb-6 rounded" />
               <p className="text-gray-700 leading-relaxed mb-2">
                 Melalui unit Baitul Maal, KSPPS Bhapedes mengelola dan
                 menyalurkan dana Zakat, Infaq, dan Sedekah secara amanah
@@ -376,22 +376,22 @@ export default function HomeView() {
               </p>
               <ul className="text-gray-600 space-y-2 mb-8">
                 <li className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-[#F0A500] inline-block" />
+                  <span className="w-2 h-2 rounded-full bg-[#f08519] inline-block" />
                   Penyaluran Zakat Produktif
                 </li>
                 <li className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-[#F0A500] inline-block" />
+                  <span className="w-2 h-2 rounded-full bg-[#f08519] inline-block" />
                   Program Bantuan Modal Usaha
                 </li>
                 <li className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-[#F0A500] inline-block" />
+                  <span className="w-2 h-2 rounded-full bg-[#f08519] inline-block" />
                   Santunan Sosial & Pendidikan
                 </li>
               </ul>
               <div className="flex gap-4 flex-wrap">
                 <Link
                   href="/layanan"
-                  className="inline-flex items-center gap-2 bg-[#2E7D32] text-white px-6 py-3 rounded font-semibold hover:bg-[#1B5E20] transition"
+                  className="inline-flex items-center gap-2 bg-[#194e9e] text-white px-6 py-3 rounded font-semibold hover:bg-[#1B5E20] transition"
                 >
                   Pelajari Lebih Lanjut <ArrowRight className="w-4 h-4" />
                 </Link>
@@ -409,7 +409,7 @@ export default function HomeView() {
         <div className="max-w-7xl mx-auto px-6">
 
           {/* Section Header */}
-          <div className="flex items-center justify-between mb-12 border-b-2 border-[#2E7D32] pb-4">
+          <div className="flex items-center justify-between mb-12 border-b-2 border-[#194e9e] pb-4">
             <div>
               <h2 className="text-3xl font-bold text-[#1A1A1A]">
                 Portal Berita
@@ -417,7 +417,7 @@ export default function HomeView() {
             </div>
             <Link
               href="/berita"
-              className="inline-flex items-center gap-1 text-[#2E7D32] font-semibold hover:text-[#F0A500] transition"
+              className="inline-flex items-center gap-1 text-[#194e9e] font-semibold hover:text-[#f08519] transition"
             >
               Lihat Semua <ArrowRight className="w-4 h-4" />
             </Link>
@@ -429,7 +429,7 @@ export default function HomeView() {
             <div className="lg:col-span-2">
               {isLoadingNews ? (
                 <div className="flex flex-col items-center justify-center py-20 bg-white rounded-lg border border-gray-100">
-                  <div className="w-10 h-10 border-4 border-gray-200 border-t-[#2E7D32] rounded-full animate-spin mb-4" />
+                  <div className="w-10 h-10 border-4 border-gray-200 border-t-[#194e9e] rounded-full animate-spin mb-4" />
                   <p className="text-gray-500 text-sm">Memuat berita...</p>
                 </div>
               ) : dataBerita.length > 0 ? (
@@ -438,7 +438,7 @@ export default function HomeView() {
                   <article className="group pb-2 border-b border-gray-200">
                     <div className="overflow-hidden rounded-lg relative">
                       {/* Gold badge */}
-                      <div className="absolute top-4 left-4 z-10 bg-[#F0A500] text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">
+                      <div className="absolute top-4 left-4 z-10 bg-[#f08519] text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">
                         Terbaru
                       </div>
                       <img
@@ -453,7 +453,7 @@ export default function HomeView() {
                         {dataBerita[0].waktu}
                       </p>
 
-                      <h3 className="text-2xl font-bold text-gray-800 group-hover:text-[#2E7D32] transition leading-snug mt-1">
+                      <h3 className="text-2xl font-bold text-gray-800 group-hover:text-[#194e9e] transition leading-snug mt-1">
                         <Link href={`/berita/${dataBerita[0].slug}`}>
                           {dataBerita[0].judul}
                         </Link>
@@ -485,7 +485,7 @@ export default function HomeView() {
                             {item.waktu}
                           </p>
 
-                          <h4 className="font-bold text-gray-800 group-hover:text-[#2E7D32] transition leading-snug">
+                          <h4 className="font-bold text-gray-800 group-hover:text-[#194e9e] transition leading-snug">
                             <Link href={`/berita/${item.slug}`}>
                               {item.judul}
                             </Link>
@@ -523,7 +523,7 @@ export default function HomeView() {
               <Link
                 href="https://www.instagram.com/koperasisyariahbhapedes?igsh=MXU2N3ltbjZjOTBoaQ=="
                 target="_blank"
-                className="mt-4 inline-flex items-center gap-2 w-full justify-center px-6 py-3 bg-[#2E7D32] text-white font-semibold rounded-md hover:bg-[#1B5E20] transition shadow-sm"
+                className="mt-4 inline-flex items-center gap-2 w-full justify-center px-6 py-3 bg-[#194e9e] text-white font-semibold rounded-md hover:bg-[#1B5E20] transition shadow-sm"
               >
                 Kunjungi Instagram Kami
               </Link>
@@ -536,16 +536,16 @@ export default function HomeView() {
 
 
       {/* ================= CTA ================= */}
-      < section className="relative py-8 bg-[#2E7D32] overflow-hidden" >
+      < section className="relative py-8 bg-[#194e9e] overflow-hidden" >
         {/* Decorative blobs */}
-        < div className="absolute top-0 right-0 w-64 h-64 bg-[#F0A500]/10 rounded-full -mr-32 -mt-32 blur-3xl" />
+        < div className="absolute top-0 right-0 w-64 h-64 bg-[#f08519]/10 rounded-full -mr-32 -mt-32 blur-3xl" />
         <div className="absolute bottom-0 left-0 w-64 h-64 bg-white/5 rounded-full -ml-32 -mb-32 blur-3xl" />
 
         {/* Gold top accent line */}
-        <div className="absolute top-0 left-0 w-full h-1 bg-[#F0A500]" />
+        <div className="absolute top-0 left-0 w-full h-1 bg-[#f08519]" />
 
         <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
-          <span className="text-[#F0A500] font-semibold uppercase tracking-widest text-sm">
+          <span className="text-[#f08519] font-semibold uppercase tracking-widest text-sm">
             Bergabung Bersama Kami
           </span>
           <h2 className="text-3xl md:text-5xl font-bold text-white leading-tight mt-3">
@@ -558,7 +558,7 @@ export default function HomeView() {
           <div className="mt-8 flex flex-wrap gap-4 justify-center">
             <Link
               href="/kontak"
-              className="inline-flex items-center gap-2 bg-[#F0A500] text-white px-8 py-4 rounded-md font-bold hover:bg-[#d4910a] transition shadow-lg"
+              className="inline-flex items-center gap-2 bg-[#f08519] text-white px-8 py-4 rounded-md font-bold hover:bg-[#d4910a] transition shadow-lg"
             >
               Daftar Sekarang <ArrowRight className="w-5 h-5" />
             </Link>
