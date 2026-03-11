@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import React from 'react';
-import { Mail } from 'lucide-react';
+import { Mail, MapPin, Phone, Clock3 } from 'lucide-react';
 
 interface FooterLink {
   label: string;
@@ -19,42 +19,37 @@ const navigationLinks: FooterLink[] = [
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-white border-t border-gray-100">
-
-      {/* Gold Accent Line */}
+    <footer className="border-t border-gray-100 bg-gradient-to-b from-white to-[#f8fafc]">
       <div className="h-1 bg-[#194e9e]" />
 
-      <div className="max-w-7xl mx-auto px-6 py-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-24">
-
-          {/* Brand */}
-          <div>
+      <div className="max-w-7xl mx-auto px-6 py-10 sm:py-12">
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-12 lg:gap-8">
+          <div className="lg:col-span-5">
             <Image
               src="/img/bhapedes3.png"
               alt="KSPPS Bhapedes"
-              width={230}
-              height={230}
+              width={200}
+              height={200}
               className="object-contain"
               priority
             />
-            <p className="text-sm text-gray-600 leading-relaxed">
+            <p className="mt-4 max-w-md text-sm text-gray-600 leading-relaxed">
               KSPPS Bhakti Pemuda Desa adalah lembaga keuangan mikro syariah
-              yang berkomitmen mendukung pertumbuhan ekonomi umat
-              melalui layanan simpanan, pembiayaan usaha, dan kegiatan sosial.
+              yang berkomitmen mendukung pertumbuhan ekonomi umat melalui
+              layanan simpanan, pembiayaan usaha, dan kegiatan sosial.
             </p>
           </div>
 
-          {/* Navigation */}
-          <div>
-            <h3 className="text-sm font-bold text-[#194e9e] mb-5 uppercase tracking-wide">
+          <div className="lg:col-span-3">
+            <h3 className="mb-4 text-sm font-bold uppercase tracking-wide text-[#194e9e]">
               Navigasi
             </h3>
-            <ul className="space-y-3 text-sm">
+            <ul className="grid grid-cols-1 gap-y-3 text-sm">
               {navigationLinks.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-gray-600 hover:text-[#194e9e] transition-colors"
+                    className="text-gray-600 transition-colors hover:text-[#194e9e]"
                   >
                     {link.label}
                   </Link>
@@ -63,32 +58,38 @@ const Footer: React.FC = () => {
             </ul>
           </div>
 
-          {/* Contact */}
-          <div>
-            <h3 className="text-sm font-bold text-[#194e9e] mb-5 uppercase tracking-wide">
+          <div className="lg:col-span-4">
+            <h3 className="mb-4 text-sm font-bold uppercase tracking-wide text-[#194e9e]">
               Kontak
             </h3>
             <ul className="space-y-3 text-sm text-gray-600">
-              <li>Jl. Contoh No. 123, Jakarta</li>
-              <li>Telp: 0812-3456-7890</li>
               <li className="flex items-center gap-3">
-                <Mail size={18} className="text-[#194e9e]" />
+                <MapPin size={16} className="shrink-0 text-[#194e9e]" />
+                <span>Jl. Contoh No. 123, Jakarta</span>
+              </li>
+              <li className="flex items-center gap-3">
+                <Phone size={16} className="shrink-0 text-[#194e9e]" />
+                <span>0812-3456-7890</span>
+              </li>
+              <li className="flex items-center gap-3">
+                <Mail size={16} className="shrink-0 text-[#194e9e]" />
                 <span>info@bhapedes.co.id</span>
               </li>
-              <li>Senin - Jumat (08.00 - 16.00 WIB)</li>
+              <li className="flex items-center gap-3">
+                <Clock3 size={16} className="shrink-0 text-[#194e9e]" />
+                <span>Senin - Jumat (08.00 - 16.00 WIB)</span>
+              </li>
             </ul>
           </div>
         </div>
       </div>
 
-      {/* Bottom */}
-      <div className="border-t border-gray-100">
-        <div className="max-w-7xl mx-auto px-6 py-6 text-center text-xs text-gray-400">
-          © {new Date().getFullYear()} KSPPS Bhakti Pemuda Desa.
-          Berkah dan Memberdayakan.
+      <div className="border-t border-gray-200/70">
+        <div className="max-w-7xl mx-auto px-6 py-4 text-center text-xs text-gray-500 sm:text-sm">
+          &copy; {new Date().getFullYear()} KSPPS Bhakti Pemuda Desa. Berkah
+          dan Memberdayakan.
         </div>
       </div>
-
     </footer>
   );
 };

@@ -261,16 +261,15 @@ export default function TentangView() {
             <div className="relative w-full max-w-6xl">
               {/* horizontal line */}
               <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-px bg-gray-300" />
-
               <div className="grid grid-cols-2 gap-6">
                 {/* ================= SEKRETARIS ================= */}
                 <div className="flex flex-col items-center">
                   <div className="w-px h-6 bg-gray-300" />
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {/* Sekretaris 1 */}
-                    <div className="bg-white rounded-xl shadow-sm border border-gray-100 w-36 sm:w-48 md:w-56 h-40 sm:h-48 md:h-56 p-4 flex flex-col items-center text-center">
+                    <div className="bg-white rounded-xl shadow-sm border border-gray-100 w-36 sm:w-48 md:w-50 h-40 sm:h-48 md:h-46 p-4 flex flex-col items-center text-center">
                       <img
-                        src="/img/struktur/Wiwin.jpeg"
+                        src="/img/struktur/ica.jpeg"
                         className="w-14 h-14 sm:w-16 sm:h-16 rounded-full object-cover border-4 border-gray-100 mb-2"
                         loading="lazy"
                         alt="Icha"
@@ -279,14 +278,14 @@ export default function TentangView() {
                         Icha
                       </h4>
                       <p className="text-[#f08519] text-xs sm:text-sm font-semibold">
-                        Bendahara
+                        Sekretaris
                       </p>
                     </div>
 
                     {/* Sekretaris 2 */}
-                    <div className="bg-white rounded-xl shadow-sm border border-gray-100 w-36 sm:w-48 md:w-56 h-40 sm:h-48 md:h-56 p-4 flex flex-col items-center text-center">
+                    <div className="bg-white rounded-xl shadow-sm border border-gray-100 w-36 sm:w-48 md:w-50 h-40 sm:h-48 md:h-46 p-4 flex flex-col items-center text-center">
                       <img
-                        src="/img/struktur/Wiwin.jpeg"
+                        src="/img/struktur/iin.jpeg"
                         className="w-14 h-14 sm:w-16 sm:h-16 rounded-full object-cover border-4 border-gray-100 mb-2"
                         loading="lazy"
                         alt="Iin"
@@ -295,7 +294,7 @@ export default function TentangView() {
                         Iin
                       </h4>
                       <p className="text-[#f08519] text-xs sm:text-sm font-semibold">
-                        Bendahara
+                        Sekretaris
                       </p>
                     </div>
                   </div>
@@ -307,9 +306,9 @@ export default function TentangView() {
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {/* Bendahara 1 */}
-                    <div className="bg-white rounded-xl shadow-sm border border-gray-100 w-36 sm:w-48 md:w-56 h-40 sm:h-48 md:h-56 p-4 flex flex-col items-center text-center">
+                    <div className="bg-white rounded-xl shadow-sm border border-gray-100 w-36 sm:w-48 md:w-50 h-40 sm:h-48 md:h-46 p-4 flex flex-col items-center text-center">
                       <img
-                        src="/img/struktur/Wiwin.jpeg"
+                        src="/img/struktur/wiwin.jpeg"
                         className="w-14 h-14 sm:w-16 sm:h-16 rounded-full object-cover border-4 border-gray-100 mb-2"
                         loading="lazy"
                         alt="Wiwin"
@@ -323,7 +322,7 @@ export default function TentangView() {
                     </div>
 
                     {/* Bendahara 2 */}
-                    <div className="bg-white rounded-xl shadow-sm border border-gray-100 w-36 sm:w-48 md:w-56 h-40 sm:h-48 md:h-56 p-4 flex flex-col items-center text-center">
+                    <div className="bg-white rounded-xl shadow-sm border border-gray-100 w-36 sm:w-48 md:w-50 h-40 sm:h-48 md:h-46 p-4 flex flex-col items-center text-center">
                       <img
                         src="/img/struktur/nuril.jpeg"
                         className="w-14 h-14 sm:w-16 sm:h-16 rounded-full object-cover border-4 border-gray-100 mb-2"

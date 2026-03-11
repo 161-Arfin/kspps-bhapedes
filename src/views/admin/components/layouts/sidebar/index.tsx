@@ -1,33 +1,43 @@
 import React, { Children, useState } from "react";
-import { Home, Newspaper, FileSliders, Users, Settings, LogOut, Menu, X, ChevronDown } from "lucide-react";
+import {
+  Home,
+  Newspaper,
+  FileSliders,
+  Users,
+  Settings,
+  LogOut,
+  Menu,
+  X,
+  ChevronDown,
+} from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
 const menuItems = [
   {
-    label: 'Dashboard',
+    label: "Dashboard",
     icon: Home,
-    href: '/admin',
+    href: "/admin",
   },
   {
-    label: 'Hero',
+    label: "Hero",
     icon: FileSliders, // You can replace with a more suitable icon
     children: [
-      { label: 'Data Hero', href: '/admin/hero' },
-      { label: 'Tambah Hero', href: '/admin/hero/tambah' },
-      { label: 'Recycle Bin', href: '/admin/hero/recyclebin' },
-    ]
+      { label: "Data Hero", href: "/admin/hero" },
+      { label: "Tambah Hero", href: "/admin/hero/tambah" },
+      { label: "Recycle Bin", href: "/admin/hero/recyclebin" },
+    ],
   },
   {
-    label: 'Berita',
+    label: "Berita",
     icon: Newspaper,
     children: [
-      { label: 'Data Berita', href: '/admin/berita' },
-      { label: 'Tambah Berita', href: '/admin/berita/tambah' },
-      { label: 'Recycle Bin', href: '/admin/berita/recyclebin' },
-    ]
-  }
+      { label: "Data Berita", href: "/admin/berita" },
+      { label: "Tambah Berita", href: "/admin/berita/tambah" },
+      { label: "Recycle Bin", href: "/admin/berita/recyclebin" },
+    ],
+  },
 ];
 
 export function useSidebarState() {
@@ -38,15 +48,21 @@ export function useSidebarState() {
 export function useLogout() {
   const router = useRouter();
   const handleLogout = () => {
-    localStorage.removeItem('adminToken');
-    localStorage.removeItem('adminUser');
-    router.push('/admin/auth/login');
+    localStorage.removeItem("adminToken");
+    localStorage.removeItem("adminUser");
+    router.push("/admin/auth/login");
   };
 
   return handleLogout;
 }
 
-export default function Sidebar({ mobileOpen, setMobileOpen }: { mobileOpen: boolean; setMobileOpen: (open: boolean) => void }) {
+export default function Sidebar({
+  mobileOpen,
+  setMobileOpen,
+}: {
+  mobileOpen: boolean;
+  setMobileOpen: (open: boolean) => void;
+}) {
   const router = useRouter();
   const pathname = router.pathname;
   const [openMenu, setOpenMenu] = useState<string | null>(null);
@@ -62,36 +78,54 @@ export default function Sidebar({ mobileOpen, setMobileOpen }: { mobileOpen: boo
         />
       )}
 
-      <aside className={`fixed inset-y-0 left-0 z-50 w-64 bg-white border-r border-gray-200 flex flex-col transform transition-transform duration-200 ${mobileOpen ? 'translate-x-0 shadow-2xl' : '-translate-x-full'} md:translate-x-0 md:shadow-none`}>
+      <aside
+        className={`fixed inset-y-0 left-0 z-50 w-64 bg-white border-r border-gray-200 flex flex-col transform transition-transform duration-200 ${mobileOpen ? "translate-x-0 shadow-2xl" : "-translate-x-full"} md:translate-x-0 md:shadow-none`}
+      >
         <div className="h-16 flex items-center px-6 border border-gray-100">
           <Image src="/img/bhapedes3.png" alt="Logo" width={170} height={150} />
-          <button type="button" aria-label="Tutup Menu" onClick={() => setMobileOpen(false)} className="md:hidden ml-auto inline-flex h-8 w-8 items-center justify-center text-slate-600 hover:text-slate-100">
+          <button
+            type="button"
+            aria-label="Tutup Menu"
+            onClick={() => setMobileOpen(false)}
+            className="md:hidden ml-auto inline-flex h-8 w-8 items-center justify-center text-slate-600 hover:text-slate-100"
+          >
             <X className="h-4 w-4" />
           </button>
         </div>
 
         {/* Menu */}
-        <nav className="flex-1 px-4 py-6 space-y-1">
+        <nav className="flex-1 px-4 py-6 space-y-2">
           {menuItems.map((item) => {
             const Icon = item.icon;
-            const isParentActive = item.href === pathname || item.children?.some((child) => pathname.startsWith(child.href));
+            const isParentActive =
+              item.href === pathname ||
+              item.children?.some((child) => pathname.startsWith(child.href));
             const isOpen = openMenu === item.label;
 
             return (
               <div key={item.label}>
                 {/* PARENT */}
                 {item.href ? (
-                  <Link href={item.href} onClick={() => setMobileOpen(false)} className={`flex items-center gap-3 px-4 py-2.5 text-sm font-medium transition-colors ${isParentActive ? 'bg-slate-700 text-white' : 'text-gray-700 hover:bg-gray-100'}`}>
+                  <Link
+                    href={item.href}
+                    onClick={() => setMobileOpen(false)}
+                    className={`flex items-center gap-3 rounded-md px-4 py-2.5 text-sm font-medium transition-colors ${isParentActive ? "bg-slate-700 text-white" : "text-gray-700 hover:bg-gray-100"}`}
+                  >
                     <Icon className="h-5 w-5" />
                     {item.label}
                   </Link>
                 ) : (
-                  <button onClick={() => setOpenMenu(isOpen ? null : item.label)} className={`w-full flex items-center justify-between px-4 py-2.5 text-sm font-medium transition-colors ${isParentActive ? 'bg-slate-800 text-white' : 'text-gray-700 hover:bg-gray-100'}`}>
+                  <button
+                    onClick={() => setOpenMenu(isOpen ? null : item.label)}
+                    className={`w-full flex items-center justify-between rounded-md px-4 py-2.5 text-sm font-medium transition-colors ${isParentActive ? "bg-slate-800 text-white" : "text-gray-700 hover:bg-gray-100"}`}
+                  >
                     <div className="flex items-center gap-3">
                       <Icon className="w-5 h-5" />
                       {item.label}
                     </div>
-                    <ChevronDown className={`w-4 h-4 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
+                    <ChevronDown
+                      className={`w-4 h-4 transition-transform ${isOpen ? "rotate-180" : ""}`}
+                    />
                   </button>
                 )}
 
@@ -102,27 +136,34 @@ export default function Sidebar({ mobileOpen, setMobileOpen }: { mobileOpen: boo
                       const isActive = pathname === child.href;
 
                       return (
-                        <Link key={child.label} href={child.href} onClick={() => setMobileOpen(false)} className={`block px-3 py-2 text-sm transition-colors ${isActive ? 'bg-slate-600 text-white' : 'text-gray-700 hover:bg-gray-100'}`}>
+                        <Link
+                          key={child.label}
+                          href={child.href}
+                          onClick={() => setMobileOpen(false)}
+                          className={`block rounded-md px-3 py-2 text-sm transition-colors ${isActive ? "bg-slate-600 text-white" : "text-gray-700 hover:bg-gray-100"}`}
+                        >
                           {child.label}
                         </Link>
-                      )
+                      );
                     })}
                   </div>
                 )}
               </div>
-            )
+            );
           })}
         </nav>
 
         {/* Footer */}
         <div className="px-4 py-2 border-t border-gray-200">
-          <button onClick={handleLogout} className="mt-1 w-full flex items-center gap-3 px-4 py-2.5 text-sm text-red-600 hover:bg-red-50 transition-colors">
+          <button
+            onClick={handleLogout}
+            className="mt-1 w-full flex items-center gap-3 rounded-md px-4 py-2.5 text-sm text-red-600 transition-colors hover:bg-red-50"
+          >
             <LogOut className="w-5 h-5" />
             Logout
           </button>
         </div>
-
       </aside>
     </>
-  )
+  );
 }
