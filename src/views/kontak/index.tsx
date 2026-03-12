@@ -85,7 +85,7 @@ export default function KontakView() {
             {/* ================= MAP ================= */}
             <div className="mt-8 rounded-lg overflow-hidden border border-gray-200 shadow-sm h-[400px]">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3953.09818884947!2d110.370529!3d-7.788506!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a58332155d911%3A0x6b66a87c10b2df7e!2sYogyakarta%2C%20Yogyakarta%20City%2C%20Special%20Region%20of%20Yogyakarta!5e0!3m2!1sen!2sid!4v1709700000000!5m2!1sen!2sid"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d734.2417091418667!2d115.31757566106326!3d-6.859710794104651!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2ddabd0eb9493675%3A0x6a0d905a09c7bcd9!2sBAPEDDES%20Syariah!5e1!3m2!1sid!2sid!4v1773219533600!5m2!1sid!2sid"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}

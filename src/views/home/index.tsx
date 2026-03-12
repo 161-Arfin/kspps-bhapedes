@@ -579,7 +579,7 @@ export default function HomeView() {
           <div className="mt-8 flex flex-wrap gap-4 justify-center">
             <Link
               href="/kontak"
-              className="inline-flex items-center gap-2 bg-[#f08519] text-white px-8 py-4 rounded-md font-bold hover:bg-[#d4910a] transition shadow-lg"
+              className="inline-flex items-center gap-2 bg-[#f08519] text-white px-8 py-4 rounded-md font-bold hover:bg-[#c97017] transition shadow-lg"
             >
               Daftar Sekarang <ArrowRight className="w-5 h-5" />
             </Link>

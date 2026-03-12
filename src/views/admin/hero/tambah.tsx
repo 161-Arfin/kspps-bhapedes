@@ -3,20 +3,15 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 import { heroService } from "@/services/heroService";
 import AdminLayout from "../components/layouts/AdminLayout";
-import {
-  Upload,
-  Save,
-  X,
-  AlertCircle
-} from "lucide-react";
+import { Upload, Save, X, AlertCircle } from "lucide-react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 
 const validationSchema = Yup.object({
   judul: Yup.string()
-    .min(5, 'Judul minimal 5 karakter')
-    .required('Judul hero wajib diisi'),
-  gambar: Yup.string().required('Gambar hero wajib diunggah')
+    .min(5, "Judul minimal 5 karakter")
+    .required("Judul hero wajib diisi"),
+  gambar: Yup.string().required("Gambar hero wajib diunggah"),
 });
 
 export default function HeroTambahView() {
@@ -28,7 +23,7 @@ export default function HeroTambahView() {
     initialValues: {
       judul: "",
       status: true,
-      gambar: ""
+      gambar: "",
     },
     validationSchema,
     onSubmit: async (values) => {
@@ -38,12 +33,12 @@ export default function HeroTambahView() {
         heroService.addHero({
           judul: values.judul,
           subjudul: "",
-          gambar: previewGambar || '/placeholder.png',
-          status: values.status
+          gambar: previewGambar || "/placeholder.png",
+          status: values.status,
         });
 
         setTimeout(() => {
-          router.push('/admin/hero');
+          router.push("/admin/hero");
         }, 1000);
       } catch (error) {
         console.error("Gagal menyimpan hero:", error);
@@ -60,7 +55,7 @@ export default function HeroTambahView() {
       reader.onloadend = () => {
         const result = reader.result as string;
         setPreviewGambar(result);
-        formik.setFieldValue('gambar', result);
+        formik.setFieldValue("gambar", result);
       };
       reader.readAsDataURL(file);
     }
@@ -68,13 +63,17 @@ export default function HeroTambahView() {
 
   return (
     <AdminLayout>
-      <div className="space-y-6">
+      <div className="space-y-6 pb-26 md:pb-0">
         {/* Header & Navigasi */}
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-4">
             <div>
-              <h1 className="text-2xl font-bold text-gray-900">Tambah Hero Display</h1>
-              <p className="text-sm text-gray-500 mt-0.5">Lengkapi formulir di bawah untuk menambahkan gambar utama baru.</p>
+              <h1 className="text-2xl font-bold text-gray-900">
+                Tambah Hero Display
+              </h1>
+              <p className="text-sm text-gray-500 mt-0.5">
+                Lengkapi formulir di bawah untuk menambahkan gambar utama baru.
+              </p>
             </div>
           </div>
         </div>
@@ -83,23 +82,28 @@ export default function HeroTambahView() {
         <div className="bg-white border border-gray-200 overflow-hidden">
           <form onSubmit={formik.handleSubmit}>
             <div className="p-6 sm:p-8 space-y-8">
-
               {/* Bagian Media */}
               <div className="space-y-4">
-                <label className="block text-sm font-bold text-gray-700">Gambar Hero</label>
+                <label className="block text-sm font-bold text-gray-700">
+                  Gambar Hero
+                </label>
                 <div
                   className={`relative aspect-video w-full rounded-xl border-2 border-dashed transition-all flex flex-col items-center justify-center overflow-hidden
-                    ${previewGambar ? 'border-none' : 'border-gray-300 bg-gray-50 hover:bg-gray-100 hover:border-gray-400'}
-                    ${formik.touched.gambar && formik.errors.gambar ? 'border-red-500 bg-red-50' : ''}`}
+                    ${previewGambar ? "border-none" : "border-gray-300 bg-gray-50 hover:bg-gray-100 hover:border-gray-400"}
+                    ${formik.touched.gambar && formik.errors.gambar ? "border-red-500 bg-red-50" : ""}`}
                 >
                   {previewGambar ? (
                     <>
-                      <img src={previewGambar} alt="Preview" className="w-full h-full object-cover" />
+                      <img
+                        src={previewGambar}
+                        alt="Preview"
+                        className="w-full h-full object-cover"
+                      />
                       <button
                         type="button"
                         onClick={() => {
                           setPreviewGambar(null);
-                          formik.setFieldValue('gambar', '');
+                          formik.setFieldValue("gambar", "");
                         }}
                         className="absolute top-4 right-4 p-2 bg-black/50 hover:bg-black/70 text-white rounded-full transition-all backdrop-blur-sm"
                       >
@@ -111,9 +115,18 @@ export default function HeroTambahView() {
                       <div className="w-12 h-12 bg-slate-100 rounded-full flex items-center justify-center mb-4">
                         <Upload className="w-6 h-6 text-slate-600" />
                       </div>
-                      <p className="text-sm font-semibold text-gray-900">Upload Gambar Hero</p>
-                      <p className="text-xs text-gray-500 mt-1">Rekomendasi ukuran: 1920x1080 (16:9)</p>
-                      <input type="file" className="hidden" accept="image/*" onChange={handleGambarChange} />
+                      <p className="text-sm font-semibold text-gray-900">
+                        Upload Gambar Hero
+                      </p>
+                      <p className="text-xs text-gray-500 mt-1">
+                        Rekomendasi ukuran: 1920x1080 (16:9)
+                      </p>
+                      <input
+                        type="file"
+                        className="hidden"
+                        accept="image/*"
+                        onChange={handleGambarChange}
+                      />
                     </label>
                   )}
                 </div>
@@ -127,16 +140,23 @@ export default function HeroTambahView() {
               {/* Input Data Hero */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="md:col-span-2 space-y-2">
-                  <label htmlFor="judul" className="block text-sm font-bold text-gray-700">Judul Hero (Internal)</label>
+                  <label
+                    htmlFor="judul"
+                    className="block text-sm font-bold text-gray-700"
+                  >
+                    Judul Hero (Internal)
+                  </label>
                   <input
                     id="judul"
                     name="judul"
                     type="text"
                     placeholder="Masukkan judul untuk identifikasi data hero..."
                     className={`w-full px-4 py-3 rounded-lg border transition-all outline-none text-gray-900 
-                      ${formik.touched.judul && formik.errors.judul
-                        ? 'border-red-500 focus:ring-2 focus:ring-red-500/20'
-                        : 'border-gray-300 focus:ring-2 focus:ring-slate-500'}`}
+                      ${
+                        formik.touched.judul && formik.errors.judul
+                          ? "border-red-500 focus:ring-2 focus:ring-red-500/20"
+                          : "border-gray-300 focus:ring-2 focus:ring-slate-500"
+                      }`}
                     value={formik.values.judul}
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
@@ -146,12 +166,17 @@ export default function HeroTambahView() {
                       <AlertCircle size={12} /> {formik.errors.judul}
                     </p>
                   ) : (
-                    <p className="text-[11px] text-gray-400 italic">*Judul ini hanya untuk manajemen admin, tidak akan tampil di halaman depan.</p>
+                    <p className="text-[11px] text-gray-400 italic">
+                      *Judul ini hanya untuk manajemen admin, tidak akan tampil
+                      di halaman depan.
+                    </p>
                   )}
                 </div>
 
                 <div className="space-y-2">
-                  <label className="block text-sm font-bold text-gray-700">Status Aktif</label>
+                  <label className="block text-sm font-bold text-gray-700">
+                    Status Aktif
+                  </label>
                   <div className="flex items-center gap-4 py-3">
                     <label className="flex items-center gap-2 cursor-pointer">
                       <input
@@ -159,9 +184,11 @@ export default function HeroTambahView() {
                         name="status"
                         className="w-4 h-4 text-slate-700 focus:ring-slate-500"
                         checked={!formik.values.status}
-                        onChange={() => formik.setFieldValue('status', false)}
+                        onChange={() => formik.setFieldValue("status", false)}
                       />
-                      <span className="text-sm text-gray-700 font-medium">Draft (Tidak Tampil)</span>
+                      <span className="text-sm text-gray-700 font-medium">
+                        Draft (Tidak Tampil)
+                      </span>
                     </label>
                     <label className="flex items-center gap-2 cursor-pointer">
                       <input
@@ -169,9 +196,11 @@ export default function HeroTambahView() {
                         name="status"
                         className="w-4 h-4 text-slate-700 focus:ring-slate-500"
                         checked={formik.values.status}
-                        onChange={() => formik.setFieldValue('status', true)}
+                        onChange={() => formik.setFieldValue("status", true)}
                       />
-                      <span className="text-sm text-gray-700 font-medium">Aktif (Tampilkan)</span>
+                      <span className="text-sm text-gray-700 font-medium">
+                        Aktif (Tampilkan)
+                      </span>
                     </label>
                   </div>
                 </div>
@@ -196,7 +225,7 @@ export default function HeroTambahView() {
                 ) : (
                   <Save className="w-4 h-4" />
                 )}
-                {isSaving ? 'Menyimpan...' : 'Simpan Hero'}
+                {isSaving ? "Menyimpan..." : "Simpan Hero"}
               </button>
             </div>
           </form>

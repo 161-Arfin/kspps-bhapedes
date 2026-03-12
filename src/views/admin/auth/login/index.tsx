@@ -1,19 +1,18 @@
-'use client';
+"use client";
 
-import React, { useState } from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
-import { useRouter } from 'next/router';
-import { Eye, EyeOff, Lock, User, AlertCircle } from 'lucide-react';
-import { useFormik } from 'formik';
-import * as Yup from 'yup';
+import React, { useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { useRouter } from "next/router";
+import { Eye, EyeOff, Lock, User, AlertCircle } from "lucide-react";
+import { useFormik } from "formik";
+import * as Yup from "yup";
 
 const validationSchema = Yup.object({
-  username: Yup.string()
-    .required('Username atau Email wajib diisi'),
+  username: Yup.string().required("Username atau Email wajib diisi"),
   password: Yup.string()
-    .min(8, 'Kata sandi minimal 6 karakter')
-    .required('Kata sandi wajib diisi'),
+    .min(8, "Kata sandi minimal 6 karakter")
+    .required("Kata sandi wajib diisi"),
 });
 
 export default function LoginView() {
@@ -23,9 +22,9 @@ export default function LoginView() {
 
   const formik = useFormik({
     initialValues: {
-      username: '',
-      password: '',
-      remember: false
+      username: "",
+      password: "",
+      remember: false,
     },
     validationSchema,
     onSubmit: (values) => {
@@ -34,16 +33,19 @@ export default function LoginView() {
       // Simulasi proses login
       setTimeout(() => {
         // Simpan mock data ke localStorage
-        localStorage.setItem('adminToken', 'mock-jwt-token-12345');
-        localStorage.setItem('adminUser', JSON.stringify({
-          username: values.username,
-          role: 'admin'
-        }));
+        localStorage.setItem("adminToken", "mock-jwt-token-12345");
+        localStorage.setItem(
+          "adminUser",
+          JSON.stringify({
+            username: values.username,
+            role: "admin",
+          }),
+        );
 
         setIsLoading(false);
 
         // Alihkan ke Dashboard
-        router.push('/admin');
+        router.push("/admin");
       }, 1500);
     },
   });
@@ -51,7 +53,6 @@ export default function LoginView() {
   return (
     <div className="min-h-screen bg-gray-100 flex items-center justify-center px-6 font-sans">
       <div className="w-full max-w-5xl grid grid-cols-1 lg:grid-cols-2 bg-white shadow-md border border-gray-200 rounded-lg overflow-hidden">
-
         {/* Left Side - Branding */}
         <div className="hidden lg:flex flex-col justify-center bg-slate-700 px-12 text-white">
           <div className="mb-12">
@@ -91,7 +92,6 @@ export default function LoginView() {
           </div>
 
           <form onSubmit={formik.handleSubmit} className="space-y-6">
-
             {/* Username */}
             <div>
               <label className="block text-sm font-medium text-slate-700 mb-2">
@@ -109,9 +109,11 @@ export default function LoginView() {
                   onBlur={formik.handleBlur}
                   placeholder="Masukkan username"
                   className={`w-full pl-10 pr-4 py-3 border rounded-md text-sm focus:outline-none focus:ring-1 transition-colors
-                    ${formik.touched.username && formik.errors.username
-                      ? 'border-red-500 focus:ring-red-500 focus:border-red-500'
-                      : 'border-gray-300 focus:ring-blue-700 focus:border-blue-700'}`}
+                    ${
+                      formik.touched.username && formik.errors.username
+                        ? "border-red-500 focus:ring-red-500 focus:border-red-500"
+                        : "border-gray-300 focus:ring-blue-700 focus:border-blue-700"
+                    }`}
                 />
               </div>
               {formik.touched.username && formik.errors.username && (
@@ -128,12 +130,12 @@ export default function LoginView() {
                 <label className="text-sm font-medium text-slate-700">
                   Kata Sandi
                 </label>
-                <Link
+                {/* <Link
                   href="#"
                   className="text-xs text-blue-700 hover:underline"
                 >
                   Lupa Password?
-                </Link>
+                </Link> */}
               </div>
 
               <div className="relative">
@@ -141,16 +143,18 @@ export default function LoginView() {
                   <Lock size={18} />
                 </div>
                 <input
-                  type={showPassword ? 'text' : 'password'}
+                  type={showPassword ? "text" : "password"}
                   name="password"
                   value={formik.values.password}
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur}
                   placeholder="Masukkan kata sandi"
                   className={`w-full pl-10 pr-10 py-3 border rounded-md text-sm focus:outline-none focus:ring-1 transition-colors
-                    ${formik.touched.password && formik.errors.password
-                      ? 'border-red-500 focus:ring-red-500 focus:border-red-500'
-                      : 'border-gray-300 focus:ring-blue-700 focus:border-blue-700'}`}
+                    ${
+                      formik.touched.password && formik.errors.password
+                        ? "border-red-500 focus:ring-red-500 focus:border-red-500"
+                        : "border-gray-300 focus:ring-blue-700 focus:border-blue-700"
+                    }`}
                 />
                 <button
                   type="button"
@@ -192,17 +196,16 @@ export default function LoginView() {
               disabled={isLoading || !formik.isValid}
               className="w-full bg-slate-700 hover:bg-slate-800 text-white text-sm font-medium py-3 rounded-md transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
             >
-              {isLoading && <div className="w-4 h-4 border-2 border-white/20 border-t-white rounded-full animate-spin" />}
-              {isLoading ? 'Memproses...' : 'Masuk'}
+              {isLoading && (
+                <div className="w-4 h-4 border-2 border-white/20 border-t-white rounded-full animate-spin" />
+              )}
+              {isLoading ? "Memproses..." : "Masuk"}
             </button>
           </form>
 
           <p className="mt-8 text-center text-xs text-gray-500">
-            Kembali ke{' '}
-            <Link
-              href="/"
-              className="text-blue-700 hover:underline"
-            >
+            Kembali ke{" "}
+            <Link href="/" className="text-blue-700 hover:underline">
               Halaman Utama
             </Link>
           </p>
