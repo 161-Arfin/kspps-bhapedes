@@ -49,7 +49,7 @@ const Counter: React.FC<CounterProps> = ({
 const stats = [
   { value: 15, label: "Karyawan", icon: Users, noFormat: false },
   { value: 2, label: "Kantor Cabang", icon: Building2, noFormat: false },
-  { value: 121, label: "Anggota", icon: HeartHandshake, noFormat: false },
+  { value: 2000, label: "Anggota", icon: HeartHandshake, noFormat: false, suffix: "+" },
   { value: 2018, label: "Tahun Berdiri", icon: Calendar, noFormat: true },
 ];
 
@@ -132,9 +132,8 @@ export default function HomeView() {
             <button
               key={i}
               onClick={() => setCurrentSlide(i)}
-              className={`h-2 rounded-full transition-all ${
-                i === currentSlide ? "bg-[#f08519] w-8" : "bg-white/60 w-3"
-              }`}
+              className={`h-2 rounded-full transition-all ${i === currentSlide ? "bg-[#f08519] w-8" : "bg-white/60 w-3"
+                }`}
             />
           ))}
         </div>
@@ -173,6 +172,7 @@ export default function HomeView() {
                   <div className="h-8 md:h-12 flex items-center justify-center mb-2">
                     <div className="text-xl md:text-4xl font-bold text-[#f08519]">
                       <Counter value={item.value} noFormat={item.noFormat} />
+                      {item.suffix}
                     </div>
                   </div>
 
@@ -210,7 +210,7 @@ export default function HomeView() {
             </p>
 
             {/* Gold accent bar */}
-            <div className="w-12 h-1 bg-[#f08519] mt-2 mb-6 rounded" />
+            <div className="w-12 h-1 bg-[#f08519] mt-2 mb-4 rounded" />
 
             <Link
               href="/tentang"

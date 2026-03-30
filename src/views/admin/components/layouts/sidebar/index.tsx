@@ -2,13 +2,11 @@ import React, { Children, useState } from "react";
 import {
   Home,
   Newspaper,
-  FileSliders,
-  Users,
-  Settings,
   LogOut,
-  Menu,
   X,
   ChevronDown,
+  Vegan,
+  LayoutDashboard,
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -17,12 +15,12 @@ import { useRouter } from "next/router";
 const menuItems = [
   {
     label: "Dashboard",
-    icon: Home,
+    icon: LayoutDashboard,
     href: "/admin",
   },
   {
     label: "Hero",
-    icon: FileSliders, // You can replace with a more suitable icon
+    icon: Vegan, // You can replace with a more suitable icon
     children: [
       { label: "Data Hero", href: "/admin/hero" },
       { label: "Tambah Hero", href: "/admin/hero/tambah" },

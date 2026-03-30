@@ -23,8 +23,8 @@ const Footer: React.FC = () => {
       <div className="h-1 bg-[#194e9e]" />
 
       <div className="max-w-7xl mx-auto px-6 py-10 sm:py-12">
-        <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-12 lg:gap-8">
-          <div className="lg:col-span-5">
+        <div className="flex flex-col gap-10 md:flex-row md:flex-wrap lg:flex-nowrap lg:gap-8 lg:justify-between">
+          <div className="w-full md:w-[45%] lg:w-4/12">
             <Image
               src="/img/bhapedes3.png"
               alt="KSPPS Bhapedes"
@@ -40,11 +40,11 @@ const Footer: React.FC = () => {
             </p>
           </div>
 
-          <div className="lg:col-span-3">
+          <div className="w-full md:w-[45%] lg:w-auto lg:mx-auto lg:pl-8">
             <h3 className="mb-4 text-sm font-bold uppercase tracking-wide text-[#194e9e]">
               Navigasi
             </h3>
-            <ul className="grid grid-cols-1 gap-y-3 text-sm">
+            <ul className="flex flex-col gap-y-3 text-sm">
               {navigationLinks.map((link) => (
                 <li key={link.href}>
                   <Link
@@ -58,7 +58,7 @@ const Footer: React.FC = () => {
             </ul>
           </div>
 
-          <div className="lg:col-span-4">
+          <div className="w-full md:w-full lg:w-auto lg:ml-auto">
             <h3 className="mb-4 text-sm font-bold uppercase tracking-wide text-[#194e9e]">
               Kontak
             </h3>
