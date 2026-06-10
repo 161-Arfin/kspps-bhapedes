@@ -232,7 +232,7 @@ export default function TentangView() {
                 Supriyadi, S.IP., M.IP
               </h4>
               <p className="text-[#194e9e] text-xs sm:text-sm font-semibold">
-                Ketua DPS
+                Ketua Dewan Pengawas
               </p>
             </div>
 
@@ -247,7 +247,7 @@ export default function TentangView() {
                 alt="Ketua Pengurus"
               />
               <h4 className="font-bold text-sm sm:text-base text-gray-800">
-                Alex Budiono, S.E
+                Alex Budiono, S.Ei
               </h4>
               <p className="text-[#f08519] text-xs sm:text-sm font-semibold">
                 Ketua Pengurus
@@ -257,45 +257,73 @@ export default function TentangView() {
             {/* LINE */}
             <div className="w-px h-8 bg-gray-300" />
 
-            {/* SEKRETARIS & BENDAHARA */}
             <div className="relative w-full max-w-6xl">
-              {/* horizontal line */}
-              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-px bg-gray-300" />
-              <div className="grid grid-cols-2 gap-6">
+              {/* horizontal line spanning semua 3 kolom */}
+              <div className="absolute top-0 w-full h-px bg-gray-300" />
+              <div className="grid grid-cols-3 gap-4">
+
                 {/* ================= SEKRETARIS ================= */}
                 <div className="flex flex-col items-center">
                   <div className="w-px h-6 bg-gray-300" />
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    {/* Sekretaris 1 */}
-                    <div className="bg-white rounded-xl shadow-sm border border-gray-100 w-36 sm:w-48 md:w-50 h-40 sm:h-48 md:h-46 p-4 flex flex-col items-center text-center">
-                      <img
-                        src="/img/struktur/ica.jpeg"
-                        className="w-14 h-14 sm:w-16 sm:h-16 rounded-full object-cover border-4 border-gray-100 mb-2"
-                        loading="lazy"
-                        alt="Icha"
-                      />
-                      <h4 className="font-bold text-gray-800 text-sm sm:text-base leading-tight min-h-[40px] flex items-center justify-center">
-                        Icha
-                      </h4>
-                      <p className="text-[#f08519] text-xs sm:text-sm font-semibold">
-                        Sekretaris
-                      </p>
-                    </div>
+                  {/* Sekretaris 2 */}
+                  <div className="bg-white rounded-xl shadow-sm border border-gray-100 w-36 sm:w-48 md:w-50 h-40 sm:h-48 md:h-46 p-4 flex flex-col items-center text-center">
+                    <img
+                      src="/img/struktur/ica.jpeg"
+                      className="w-14 h-14 sm:w-16 sm:h-16 rounded-full object-cover border-4 border-gray-100 mb-2"
+                      loading="lazy"
+                      alt="Azizah"
+                    />
+                    <h4 className="font-bold text-gray-800 text-sm sm:text-base leading-tight min-h-[40px] flex items-center justify-center">
+                      Azizah Triningsih, A.Md, Keb
+                    </h4>
+                    <p className="text-[#f08519] text-xs sm:text-sm font-semibold">
+                      Sekretaris
+                    </p>
+                  </div>
+                </div>
 
-                    {/* Sekretaris 2 */}
-                    <div className="bg-white rounded-xl shadow-sm border border-gray-100 w-36 sm:w-48 md:w-50 h-40 sm:h-48 md:h-46 p-4 flex flex-col items-center text-center">
-                      <img
-                        src="/img/struktur/iin.jpeg"
-                        className="w-14 h-14 sm:w-16 sm:h-16 rounded-full object-cover border-4 border-gray-100 mb-2"
-                        loading="lazy"
-                        alt="Iin"
-                      />
-                      <h4 className="font-bold text-gray-800 text-sm sm:text-base leading-tight min-h-[40px] flex items-center justify-center">
-                        Iin
-                      </h4>
-                      <p className="text-[#f08519] text-xs sm:text-sm font-semibold">
-                        Sekretaris
-                      </p>
+                {/* ================= ANGGOTA ================= */}
+                <div className="flex flex-col items-center">
+                  <div className="w-px h-110 bg-gray-300" />
+                  {/* horizontal line antara 2 anggota */}
+                  <div className="relative w-full flex flex-col items-center">
+                    <div className="absolute top-0 left-0 w-2/2 h-px bg-gray-300" />
+                    <div className="grid grid-cols-2 gap-32 w-full">
+                      {/* Anggota 1 */}
+                      <div className="flex flex-col items-center">
+                        <div className="w-px h-6 bg-gray-300" />
+                        <div className="bg-white rounded-xl shadow-sm border border-gray-100 w-36 sm:w-48 md:w-50 h-40 sm:h-48 md:h-46 p-4 flex flex-col items-center text-center">
+                          <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full border-4 border-gray-100 mb-2 bg-gray-100 flex items-center justify-center">
+                            <svg className="w-8 h-8 text-gray-300" fill="currentColor" viewBox="0 0 24 24">
+                              <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                            </svg>
+                          </div>
+                          <h4 className="font-bold text-gray-800 text-sm sm:text-base leading-tight min-h-[40px] flex items-center justify-center">
+                            Atun Istiana, S.Pd
+                          </h4>
+                          <p className="text-[#f08519] text-xs sm:text-sm font-semibold">
+                            Anggota
+                          </p>
+                        </div>
+                      </div>
+
+                      {/* Anggota 2 */}
+                      <div className="flex flex-col items-center">
+                        <div className="w-px h-6 bg-gray-300" />
+                        <div className="bg-white rounded-xl shadow-sm border border-gray-100 w-36 sm:w-48 md:w-50 h-40 sm:h-48 md:h-46 p-4 flex flex-col items-center text-center">
+                          <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full border-4 border-gray-100 mb-2 bg-gray-100 flex items-center justify-center">
+                            <svg className="w-8 h-8 text-gray-300" fill="currentColor" viewBox="0 0 24 24">
+                              <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                            </svg>
+                          </div>
+                          <h4 className="font-bold text-gray-800 text-sm sm:text-base leading-tight min-h-[40px] flex items-center justify-center">
+                            Khalifaturrahma
+                          </h4>
+                          <p className="text-[#f08519] text-xs sm:text-sm font-semibold">
+                            Anggota
+                          </p>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -303,8 +331,7 @@ export default function TentangView() {
                 {/* ================= BENDAHARA ================= */}
                 <div className="flex flex-col items-center">
                   <div className="w-px h-6 bg-gray-300" />
-
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="flex flex-col items-center gap-0">
                     {/* Bendahara 1 */}
                     <div className="bg-white rounded-xl shadow-sm border border-gray-100 w-36 sm:w-48 md:w-50 h-40 sm:h-48 md:h-46 p-4 flex flex-col items-center text-center">
                       <img
@@ -314,26 +341,29 @@ export default function TentangView() {
                         alt="Wiwin"
                       />
                       <h4 className="font-bold text-gray-800 text-sm sm:text-base leading-tight min-h-[40px] flex items-center justify-center">
-                        Wiwin
+                        Wiwin Erliyana, S.E
                       </h4>
                       <p className="text-[#f08519] text-xs sm:text-sm font-semibold">
                         Bendahara
                       </p>
                     </div>
 
-                    {/* Bendahara 2 */}
+                    {/* LINE between Bendahara and Anggota Bendahara */}
+                    <div className="w-px h-4 bg-gray-300" />
+
+                    {/* Anggota Bendahara */}
                     <div className="bg-white rounded-xl shadow-sm border border-gray-100 w-36 sm:w-48 md:w-50 h-40 sm:h-48 md:h-46 p-4 flex flex-col items-center text-center">
                       <img
-                        src="/img/struktur/nuril.jpeg"
+                        src="/img/struktur/iin.jpeg"
                         className="w-14 h-14 sm:w-16 sm:h-16 rounded-full object-cover border-4 border-gray-100 mb-2"
                         loading="lazy"
                         alt="Nuril"
                       />
                       <h4 className="font-bold text-gray-800 text-sm sm:text-base leading-tight min-h-[40px] flex items-center justify-center">
-                        Nuril
+                        Wirdatul Inayah, S.P
                       </h4>
                       <p className="text-[#f08519] text-xs sm:text-sm font-semibold">
-                        Bendahara
+                        Anggota Bendahara
                       </p>
                     </div>
                   </div>
@@ -363,25 +393,19 @@ export default function TentangView() {
               <div className="grid grid-cols-1 sm:grid-cols-[220px_20px_1fr] sm:items-start gap-1 sm:gap-0">
                 <span className="font-bold">Badan Hukum</span>
                 <span className="hidden sm:inline">:</span>
-                <span>No. 123/BH/KOP/1997</span>
+                <span>AHU-0000464.AH.01.39.TAHUN 2023</span>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-[220px_20px_1fr] sm:items-start gap-1 sm:gap-0">
-                <span className="font-bold">Nomor Induk Koperasi (NIK)</span>
+                <span className="font-bold">Tanggal Pengesahan</span>
                 <span className="hidden sm:inline">:</span>
-                <span>0000000000000</span>
+                <span>10 Februari 2023</span>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-[220px_20px_1fr] sm:items-start gap-1 sm:gap-0">
-                <span className="font-bold">Audit & Pengawasan</span>
+                <span className="font-bold">Otoritas</span>
                 <span className="hidden sm:inline">:</span>
-                <span>KAP & Dewan Pengawas Syariah</span>
-              </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-[220px_20px_1fr] sm:items-start gap-1 sm:gap-0">
-                <span className="font-bold">Izin Operasional</span>
-                <span className="hidden sm:inline">:</span>
-                <span>Kementerian Koperasi & UKM RI</span>
+                <span>Kementerin Hukum dan HAM RI</span>
               </div>
             </div>
           </div>

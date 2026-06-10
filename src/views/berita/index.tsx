@@ -13,7 +13,7 @@ import {
   Newspaper,
   Tag,
   Heart,
-  Loader2
+  Loader2,
 } from "lucide-react";
 import { beritaService } from "@/services/beritaService";
 
@@ -38,7 +38,7 @@ export default function BeritaView() {
     const fetchNews = () => {
       const data = beritaService.getBerita();
       const mappedData: NewsItem[] = data
-        .filter(item => item.status === true) // Hanya tampilkan yang dipublikasikan
+        .filter((item) => item.status === true) // Hanya tampilkan yang dipublikasikan
         .map((item, index) => ({
           id: item.id,
           slug: item.slug,
@@ -49,7 +49,7 @@ export default function BeritaView() {
           category: item.kategori,
           image: item.gambar,
           excerpt: item.ringkasan,
-          featured: index < 3 // Tandai 3 berita pertama sebagai featured/headline
+          featured: index < 3, // Tandai 3 berita pertama sebagai featured/headline
         }));
       setNewsData(mappedData);
       setIsLoading(false);
@@ -62,8 +62,8 @@ export default function BeritaView() {
   const itemsPerPage = 6;
   const newsSectionRef = React.useRef<HTMLDivElement>(null);
 
-  const featuredNews = newsData.filter(item => item.featured);
-  const latestNews = newsData.filter(item => !item.featured);
+  const featuredNews = newsData.filter((item) => item.featured);
+  const latestNews = newsData.filter((item) => !item.featured);
 
   // Pagination Logic
   const totalPages = Math.ceil(latestNews.length / itemsPerPage);
@@ -76,8 +76,9 @@ export default function BeritaView() {
     if (newsSectionRef.current) {
       const yOffset = -100; // Offset for navbar
       const element = newsSectionRef.current;
-      const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
-      window.scrollTo({ top: y, behavior: 'smooth' });
+      const y =
+        element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      window.scrollTo({ top: y, behavior: "smooth" });
     }
   };
 
@@ -103,9 +104,19 @@ export default function BeritaView() {
         <div className="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center mb-6">
           <Newspaper className="w-10 h-10 text-gray-300" />
         </div>
-        <h2 className="text-2xl font-bold text-gray-800 mb-2">Belum Ada Berita</h2>
-        <p className="text-gray-500 max-w-md">Saat ini belum ada berita atau pengumuman yang dipublikasikan. Silakan cek kembali nanti.</p>
-        <Link href="/" className="mt-8 text-[#194e9e] font-bold hover:underline">Kembali ke Beranda</Link>
+        <h2 className="text-2xl font-bold text-gray-800 mb-2">
+          Belum Ada Berita
+        </h2>
+        <p className="text-gray-500 max-w-md">
+          Saat ini belum ada berita atau pengumuman yang dipublikasikan. Silakan
+          cek kembali nanti.
+        </p>
+        <Link
+          href="/"
+          className="mt-8 text-[#194e9e] font-bold hover:underline"
+        >
+          Kembali ke Beranda
+        </Link>
       </div>
     );
   }
@@ -113,7 +124,6 @@ export default function BeritaView() {
   return (
     <div className="bg-[#f8f9fa] pb-20">
       <div className="max-w-7xl mx-auto px-6">
-
         {/* ================= UPDATES TICKER ================= */}
         <div className="bg-white border-y border-gray-200 py-3 mb-8 flex items-center gap-4 overflow-hidden relative">
           <div className="bg-[#194e9e] text-white px-3 py-2 text-xs font-bold uppercase whitespace-nowrap z-10 hidden lg:block">
@@ -121,15 +131,25 @@ export default function BeritaView() {
           </div>
           <div className="flex-grow overflow-hidden relative h-5">
             <div className="absolute flex gap-12 whitespace-nowrap animate-marquee hover:pause">
-              {newsData.map(item => (
-                <Link key={item.id} href={`/berita/${item.slug}`} className="text-sm text-gray-700 hover:text-[#f08519] flex items-center gap-2">
-                  <span className="w-1 h-1 bg-gray-400 rounded-full" /> {item.title}
+              {newsData.map((item) => (
+                <Link
+                  key={item.id}
+                  href={`/berita/${item.slug}`}
+                  className="text-sm text-gray-700 hover:text-[#f08519] flex items-center gap-2"
+                >
+                  <span className="w-1 h-1 bg-gray-400 rounded-full" />{" "}
+                  {item.title}
                 </Link>
               ))}
               {/* Duplicate for seamless loop */}
-              {newsData.map(item => (
-                <Link key={`dup-${item.id}`} href={`/berita/${item.id}`} className="text-sm text-gray-700 hover:text-[#f08519] flex items-center gap-2">
-                  <span className="w-1 h-1 bg-gray-400 rounded-full" /> {item.title}
+              {newsData.map((item) => (
+                <Link
+                  key={`dup-${item.id}`}
+                  href={`/berita/${item.id}`}
+                  className="text-sm text-gray-700 hover:text-[#f08519] flex items-center gap-2"
+                >
+                  <span className="w-1 h-1 bg-gray-400 rounded-full" />{" "}
+                  {item.title}
                 </Link>
               ))}
             </div>
@@ -137,10 +157,8 @@ export default function BeritaView() {
         </div>
 
         <div className="grid lg:grid-cols-3 gap-8">
-
           {/* ================= MAIN CONTENT (HEADLINE & FEED) ================= */}
           <div className="lg:col-span-2 space-y-12">
-
             {/* FEATURED CAROUSEL */}
             <section className="relative h-[450px] rounded-sm overflow-hidden group shadow-lg border border-gray-200">
               <div
@@ -160,11 +178,17 @@ export default function BeritaView() {
                         {slide.category}
                       </span>
                       <h2 className="text-xl md:text-4xl font-extrabold mb-4 leading-tight transition underline-offset-4 decoration-[#f08519] hover:underline">
-                        <Link href={`/berita/${slide.slug}`}>{slide.title}</Link>
+                        <Link href={`/berita/${slide.slug}`}>
+                          {slide.title}
+                        </Link>
                       </h2>
                       <div className="flex items-center gap-4 text-sm text-gray-300">
-                        <span className="flex items-center gap-1"><Calendar size={14} /> {slide.date}</span>
-                        <span className="flex items-center gap-1"><User size={14} /> {slide.author}</span>
+                        <span className="flex items-center gap-1">
+                          <Calendar size={14} /> {slide.date}
+                        </span>
+                        <span className="flex items-center gap-1">
+                          <User size={14} /> {slide.author}
+                        </span>
                       </div>
                     </div>
                   </div>
@@ -173,13 +197,20 @@ export default function BeritaView() {
 
               {/* Controls */}
               <button
-                onClick={() => setCurrentHeadline((prev) => (prev - 1 + featuredNews.length) % featuredNews.length)}
+                onClick={() =>
+                  setCurrentHeadline(
+                    (prev) =>
+                      (prev - 1 + featuredNews.length) % featuredNews.length,
+                  )
+                }
                 className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 p-2 text-white transition opacity-0 group-hover:opacity-100"
               >
                 <ChevronLeft />
               </button>
               <button
-                onClick={() => setCurrentHeadline((prev) => (prev + 1) % featuredNews.length)}
+                onClick={() =>
+                  setCurrentHeadline((prev) => (prev + 1) % featuredNews.length)
+                }
                 className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 p-2 text-white transition opacity-0 group-hover:opacity-100"
               >
                 <ChevronRight />
@@ -207,7 +238,10 @@ export default function BeritaView() {
 
               <div className="space-y-2 divide-y divide-gray-200">
                 {currentItems.map((item) => (
-                  <article key={item.id} className="pt-2 pb-2 flex flex-col sm:flex-row gap-6 group">
+                  <article
+                    key={item.id}
+                    className="pt-2 pb-2 flex flex-col sm:flex-row gap-6 group"
+                  >
                     <div className="relative sm:w-56 h-40 sm:h-36 overflow-hidden flex-shrink-0">
                       <img
                         src={item.image}
@@ -235,7 +269,7 @@ export default function BeritaView() {
                 <button
                   onClick={() => handlePageChange(Math.max(currentPage - 1, 1))}
                   disabled={currentPage === 1}
-                  className={`p-2 border border-gray-300 transition-colors ${currentPage === 1 ? 'text-gray-300 cursor-not-allowed' : 'text-gray-600 hover:bg-[#194e9e] hover:text-white'}`}
+                  className={`p-2 border border-gray-300 transition-colors ${currentPage === 1 ? "text-gray-300 cursor-not-allowed" : "text-gray-600 hover:bg-[#194e9e] hover:text-white"}`}
                 >
                   <ChevronLeft size={18} />
                 </button>
@@ -245,9 +279,10 @@ export default function BeritaView() {
                     key={i}
                     onClick={() => handlePageChange(i + 1)}
                     className={`w-10 h-10 border font-bold text-sm transition-all
-                      ${currentPage === i + 1
-                        ? 'bg-[#194e9e] text-white border-[#194e9e]'
-                        : 'border-gray-300 text-gray-600 hover:bg-gray-100'
+                      ${
+                        currentPage === i + 1
+                          ? "bg-[#194e9e] text-white border-[#194e9e]"
+                          : "border-gray-300 text-gray-600 hover:bg-gray-100"
                       }`}
                   >
                     {i + 1}
@@ -255,20 +290,20 @@ export default function BeritaView() {
                 ))}
 
                 <button
-                  onClick={() => handlePageChange(Math.min(currentPage + 1, totalPages))}
+                  onClick={() =>
+                    handlePageChange(Math.min(currentPage + 1, totalPages))
+                  }
                   disabled={currentPage === totalPages}
-                  className={`p-2 border border-gray-300 transition-colors ${currentPage === totalPages ? 'text-gray-300 cursor-not-allowed' : 'text-gray-600 hover:bg-[#194e9e] hover:text-white'}`}
+                  className={`p-2 border border-gray-300 transition-colors ${currentPage === totalPages ? "text-gray-300 cursor-not-allowed" : "text-gray-600 hover:bg-[#194e9e] hover:text-white"}`}
                 >
                   <ChevronRight size={18} />
                 </button>
               </div>
             </section>
-
           </div>
 
           {/* ================= SIDEBAR ================= */}
           <aside className="space-y-12">
-
             {/* SEARCH */}
             <div className="bg-white p-6 border border-gray-200 shadow-sm relative overflow-hidden">
               <div className="absolute top-0 left-0 w-1 h-full bg-[#194e9e]" />
@@ -290,11 +325,15 @@ export default function BeritaView() {
             {/* POPULAR NEWS */}
             <div className="space-y-6">
               <h3 className="text-xl font-bold text-[#194e9e] border-b border-gray-300 pb-2 flex items-center gap-2">
-                <TrendingUp size={20} className="text-[#f08519]" /> Berita Populer
+                <TrendingUp size={20} className="text-[#f08519]" /> Berita
+                Populer
               </h3>
               <div className="space-y-6">
                 {newsData.slice(0, 4).map((item, idx) => (
-                  <article key={item.id} className="flex gap-4 items-start group">
+                  <article
+                    key={item.id}
+                    className="flex gap-4 items-start group"
+                  >
                     <div className="flex-shrink-0 w-8 h-8 bg-gray-100 flex items-center justify-center font-bold text-gray-400 border border-gray-200 transition">
                       {idx + 1}
                     </div>
@@ -302,7 +341,9 @@ export default function BeritaView() {
                       <h4 className="font-bold text-gray-800 text-sm leading-snug group-hover:text-[#f08519] transition line-clamp-2">
                         <Link href={`/berita/${item.slug}`}>{item.title}</Link>
                       </h4>
-                      <p className="text-[11px] text-gray-500 mt-1 uppercase font-medium">{item.category} • {item.date}</p>
+                      <p className="text-[11px] text-gray-500 mt-1 uppercase font-medium">
+                        {item.category} • {item.date}
+                      </p>
                     </div>
                   </article>
                 ))}
@@ -315,8 +356,12 @@ export default function BeritaView() {
       {/* Ticker Animation */}
       <style jsx>{`
         @keyframes marquee {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-50%); }
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
         }
         .animate-marquee {
           animation: marquee 30s linear infinite;

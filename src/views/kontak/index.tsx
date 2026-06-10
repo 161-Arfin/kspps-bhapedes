@@ -1,8 +1,41 @@
+"use client";
+
 import React from "react";
-import Link from "next/link";
-import { Mail, MapPin, Phone, Clock, ChevronRight } from "lucide-react";
+import { Mail, MapPin, Phone } from "lucide-react";
+
+const ADMIN_WHATSAPP_NUMBER = "6285336260858";
 
 export default function KontakView() {
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    const formData = new FormData(event.currentTarget);
+    const nama = formData.get("nama")?.toString().trim();
+    const email = formData.get("email")?.toString().trim();
+    const whatsapp = formData.get("whatsapp")?.toString().trim();
+    const layanan = formData.get("layanan")?.toString().trim();
+    const pesan = formData.get("pesan")?.toString().trim();
+
+    const message = [
+      "Assalamu'alaikum Admin BHAPEDES.",
+      "",
+      `Saya ingin menghubungi admin terkait layanan: ${layanan}`,
+      "",
+      `Nama: ${nama}`,
+      `Email: ${email}`,
+      `Nomor WhatsApp: ${whatsapp}`,
+      "",
+      "Pesan:",
+      pesan,
+    ].join("\n");
+
+    const whatsappUrl = `https://wa.me/${ADMIN_WHATSAPP_NUMBER}?text=${encodeURIComponent(
+      message,
+    )}`;
+
+    window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+  };
+
   return (
     <div className="bg-white min-h-screen">
       {/* ================= CONTENT ================= */}
@@ -16,14 +49,16 @@ export default function KontakView() {
                 Kirim Pesan
               </h2>
               <div className="w-16 h-1 bg-[#f08519] mb-8 rounded" />
-              <form className="space-y-6">
+              <form className="space-y-6" onSubmit={handleSubmit}>
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
                       Nama Lengkap
                     </label>
                     <input
+                      name="nama"
                       type="text"
+                      required
                       className="w-full border border-gray-300 px-4 py-2.5 rounded focus:outline-none focus:border-[#194e9e] transition-colors"
                     />
                   </div>
@@ -32,7 +67,9 @@ export default function KontakView() {
                       Alamat Email
                     </label>
                     <input
+                      name="email"
                       type="email"
+                      required
                       className="w-full border border-gray-300 px-4 py-2.5 rounded focus:outline-none focus:border-[#194e9e] transition-colors"
                     />
                   </div>
@@ -44,7 +81,9 @@ export default function KontakView() {
                       Nomor WhatsApp
                     </label>
                     <input
+                      name="whatsapp"
                       type="tel"
+                      required
                       className="w-full border border-gray-300 px-4 py-2.5 rounded focus:outline-none focus:border-[#194e9e] transition-colors"
                     />
                   </div>
@@ -53,12 +92,16 @@ export default function KontakView() {
                     <label className="block text-sm font-medium text-gray-700 mb-2">
                       Subjek
                     </label>
-                    <select className="w-full border border-gray-300 px-4 py-2.5 rounded focus:outline-none focus:border-[#194e9e] transition-colors bg-white">
-                      <option>Informasi Simpanan</option>
-                      <option>Informasi Pembiayaan</option>
-                      <option>Layanan Sosial (ZISWAF)</option>
-                      <option>Keluhan / Saran</option>
-                      <option>Lainnya</option>
+                    <select
+                      name="layanan"
+                      required
+                      className="w-full border border-gray-300 px-4 py-2.5 rounded focus:outline-none focus:border-[#194e9e] transition-colors bg-white"
+                    >
+                      <option value="Simpanan Pelajar">Simpanan Pelajar</option>
+                      <option value="Simpanan Wlimah">Simpanan Walimah</option>
+                      <option value="Rahn/Gadai">Rahn/Gadai</option>
+                      <option value="Investasi Emas">Investasi Emas</option>
+                      <option value="Lainnya">Lainnya</option>
                     </select>
                   </div>
                 </div>
@@ -68,7 +111,9 @@ export default function KontakView() {
                     Pesan Anda
                   </label>
                   <textarea
+                    name="pesan"
                     rows={5}
+                    required
                     className="w-full border border-gray-300 px-4 py-2.5 rounded focus:outline-none focus:border-[#194e9e] transition-colors"
                   ></textarea>
                 </div>
@@ -111,8 +156,8 @@ export default function KontakView() {
                       Alamat Kantor
                     </p>
                     <p className="leading-relaxed">
-                      Jl. Raya Contoh No. 123 <br />
-                      Sleman, Daerah Istimewa Yogyakarta 55281
+                      Jl Ignatus Slamet Riyadi, <br />
+                      Paseraman, Arjasa, Kabupaten Sumenep, Jawa Timur 69491
                     </p>
                   </div>
                 </div>
@@ -123,8 +168,7 @@ export default function KontakView() {
                     <p className="font-bold text-gray-900 mb-1">
                       Telepon & WhatsApp
                     </p>
-                    <p>(0274) 1234567</p>
-                    <p>0812-3456-7890</p>
+                    <p>+62 85336260858</p>
                   </div>
                 </div>
 
@@ -132,7 +176,7 @@ export default function KontakView() {
                   <Mail className="text-[#194e9e] shrink-0" size={20} />
                   <div>
                     <p className="font-bold text-gray-900 mb-1">Email</p>
-                    <p>info@bhapedes.com</p>
+                    <p>ksppsbhapedes18@gmail.com</p>
                   </div>
                 </div>
               </div>
@@ -147,13 +191,13 @@ export default function KontakView() {
               <div className="space-y-4 text-sm text-gray-700">
                 <div className="flex items-center gap-3">
                   <div className="w-full flex justify-between border-b border-gray-100 pb-2">
-                    <span className="font-semibold">Senin – Sabtu</span>
-                    <span className="font-bold">08.00 – 15.00</span>
+                    <span className="font-semibold">Senin – Jumat</span>
+                    <span className="font-bold">08.00 – 17.00</span>
                   </div>
                 </div>
                 <div className="flex items-center gap-3">
                   <div className="w-full flex justify-between text-[#d32f2f]">
-                    <span className="font-semibold">Minggu & Libur</span>
+                    <span className="font-semibold">Sabtu & Minggu</span>
                     <span className="font-bold">Tutup</span>
                   </div>
                 </div>

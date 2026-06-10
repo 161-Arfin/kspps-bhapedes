@@ -49,7 +49,13 @@ const Counter: React.FC<CounterProps> = ({
 const stats = [
   { value: 15, label: "Karyawan", icon: Users, noFormat: false },
   { value: 2, label: "Kantor Cabang", icon: Building2, noFormat: false },
-  { value: 2000, label: "Anggota", icon: HeartHandshake, noFormat: false, suffix: "+" },
+  {
+    value: 2000,
+    label: "Anggota",
+    icon: HeartHandshake,
+    noFormat: false,
+    suffix: "+",
+  },
   { value: 2018, label: "Tahun Berdiri", icon: Calendar, noFormat: true },
 ];
 
@@ -101,7 +107,7 @@ export default function HomeView() {
             {dataHero.map((hero, index) => (
               <div key={index} className="min-w-full h-full relative">
                 <img
-                  src={hero.gambar}
+                  src="/img/assets/cover.jpeg"
                   alt={hero.judul}
                   className="w-full h-full object-cover"
                 />
@@ -132,8 +138,9 @@ export default function HomeView() {
             <button
               key={i}
               onClick={() => setCurrentSlide(i)}
-              className={`h-2 rounded-full transition-all ${i === currentSlide ? "bg-[#f08519] w-8" : "bg-white/60 w-3"
-                }`}
+              className={`h-2 rounded-full transition-all ${
+                i === currentSlide ? "bg-[#f08519] w-8" : "bg-white/60 w-3"
+              }`}
             />
           ))}
         </div>
@@ -417,12 +424,12 @@ export default function HomeView() {
                 </li>
               </ul>
               <div className="flex gap-4 flex-wrap">
-                <Link
+                {/* <Link
                   href="/layanan"
                   className="inline-flex items-center gap-2 bg-[#194e9e] text-white px-6 py-3 rounded font-semibold hover:bg-[#153f80] transition"
                 >
                   Pelajari Lebih Lanjut <ArrowRight className="w-4 h-4" />
-                </Link>
+                </Link> */}
               </div>
             </div>
           </div>

@@ -1,7 +1,7 @@
-import Link from 'next/link';
-import Image from 'next/image';
-import React from 'react';
-import { Mail, MapPin, Phone, Clock3 } from 'lucide-react';
+import Link from "next/link";
+import Image from "next/image";
+import React from "react";
+import { Mail, MapPin, Phone, Clock3 } from "lucide-react";
 
 interface FooterLink {
   label: string;
@@ -9,12 +9,12 @@ interface FooterLink {
 }
 
 const navigationLinks: FooterLink[] = [
-  { label: 'Beranda', href: '/' },
-  { label: 'Tentang Kami', href: '/tentang' },
-  { label: 'Produk', href: '/produk' },
-  { label: 'Layanan Sosial', href: '/layanan-sosial' },
-  { label: 'Berita', href: '/berita' },
-  { label: 'Kontak', href: '/kontak' },
+  { label: "Beranda", href: "/" },
+  { label: "Tentang Kami", href: "/tentang" },
+  { label: "Produk", href: "/produk" },
+  // { label: 'Layanan Sosial', href: '/layanan-sosial' },
+  { label: "Berita", href: "/berita" },
+  { label: "Kontak", href: "/kontak" },
 ];
 
 const Footer: React.FC = () => {
@@ -26,7 +26,7 @@ const Footer: React.FC = () => {
         <div className="flex flex-col gap-10 md:flex-row md:flex-wrap lg:flex-nowrap lg:gap-8 lg:justify-between">
           <div className="w-full md:w-[45%] lg:w-4/12">
             <Image
-              src="/img/bhapedes3.png"
+              src="/img/bhapedes2.png"
               alt="KSPPS Bhapedes"
               width={200}
               height={200}
@@ -65,19 +65,22 @@ const Footer: React.FC = () => {
             <ul className="space-y-3 text-sm text-gray-600">
               <li className="flex items-center gap-3">
                 <MapPin size={16} className="shrink-0 text-[#194e9e]" />
-                <span>Jl. Contoh No. 123, Jakarta</span>
+                <span>
+                  Jl Ignatus Slamet Riyadi, <br />
+                  Paseraman, Arjasa, Kabupaten Sumenep, <br /> Jawa Timur 69491
+                </span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone size={16} className="shrink-0 text-[#194e9e]" />
-                <span>0812-3456-7890</span>
+                <span>+62 85336260858</span>
               </li>
               <li className="flex items-center gap-3">
                 <Mail size={16} className="shrink-0 text-[#194e9e]" />
-                <span>info@bhapedes.co.id</span>
+                <span>ksppsbhapedes18@gmail.com</span>
               </li>
               <li className="flex items-center gap-3">
                 <Clock3 size={16} className="shrink-0 text-[#194e9e]" />
-                <span>Senin - Jumat (08.00 - 16.00 WIB)</span>
+                <span>Senin - Jumat (08.00 - 17.00 WIB)</span>
               </li>
             </ul>
           </div>
@@ -86,8 +89,8 @@ const Footer: React.FC = () => {
 
       <div className="border-t border-gray-200/70">
         <div className="max-w-7xl mx-auto px-6 py-4 text-center text-xs text-gray-500 sm:text-sm">
-          &copy; {new Date().getFullYear()} KSPPS Bhakti Pemuda Desa. Berkah
-          dan Memberdayakan.
+          &copy; {new Date().getFullYear()} KSPPS Bhakti Pemuda Desa. Berkah dan
+          Memberdayakan.
         </div>
       </div>
     </footer>
