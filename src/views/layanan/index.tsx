@@ -12,7 +12,6 @@ import {
   ChevronLeft,
   CheckCircle2,
   AlertCircle,
-  Import,
 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
@@ -258,6 +257,8 @@ export default function LayananView() {
                     <Image
                       src={slide.image}
                       alt={slide.title}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 66vw"
                       className="w-full h-full object-cover"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
@@ -306,6 +307,8 @@ export default function LayananView() {
                 <Image
                   src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=2070&auto=format&fit=crop"
                   alt="Edukasi Anak Dhuafa"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 33vw"
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center p-6 text-center">
@@ -318,8 +321,8 @@ export default function LayananView() {
                 <Image
                   src="https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?q=80&w=1932&auto=format&fit=crop"
                   alt="Layanan Kesehatan"
-                  width={200}
-                  height={200}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 33vw"
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center p-6 text-center">

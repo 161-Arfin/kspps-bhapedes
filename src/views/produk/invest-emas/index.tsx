@@ -1,7 +1,6 @@
 import React from "react";
 import Link from "next/link";
 import {
-  Gem,
   TrendingUp,
   ShieldCheck,
   Coins,
@@ -66,11 +65,12 @@ export default function InvestasiEmasView() {
           {/* IMAGE */}
           <div className="relative">
             <Image
-              src="/img/assets/invest.jpg"
+              src="/img/layanan/Investasi Emas.jpeg"
               alt="Investasi Emas"
-              width={200}
-              height={200}
-              className="rounded-lg shadow-md border border-gray-200 w-full object-cover"
+              width={900}
+              height={620}
+              sizes="(max-width: 768px) 100vw, 50vw"
+              className="rounded-lg shadow-md border border-gray-200 w-full h-auto object-cover"
             />
 
             <div className="absolute -bottom-4 -left-4 w-20 h-20 border-b-4 border-l-4 border-[#f08519] rounded-bl-lg" />

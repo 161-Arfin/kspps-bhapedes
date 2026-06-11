@@ -111,7 +111,8 @@ export default function HomeView() {
                   src="/img/assets/cover.jpeg"
                   alt={hero.judul}
                   fill
-                  priority
+                  priority={index === 0}
+                  sizes="100vw"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-black/40" />
@@ -238,8 +239,9 @@ export default function HomeView() {
             <Image
               src="/img/assets/Pelayanan.jpeg"
               alt="Kegiatan Bhapedes"
-              width={200}
-              height={200}
+              width={1000}
+              height={700}
+              sizes="(max-width: 768px) 100vw, 50vw"
               className="rounded-md shadow-md w-full object-cover border border-gray-200"
             />
           </div>
@@ -273,8 +275,9 @@ export default function HomeView() {
                 <Image
                   src="/img/layanan/Simpanan Pelajar.jpeg"
                   alt="Simpanan Pelajar"
-                  width={200}
-                  height={200}
+                  width={800}
+                  height={500}
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   className="w-full h-full object-cover object-left md:object-center group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
@@ -304,8 +307,9 @@ export default function HomeView() {
                 <Image
                   src="/img/layanan/Simpanan Walimah.jpeg"
                   alt="Simpanan Walimah"
-                  width={200}
-                  height={200}
+                  width={800}
+                  height={500}
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   className="w-full h-full object-cover object-right md:object-center group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
@@ -335,8 +339,9 @@ export default function HomeView() {
                 <Image
                   src="/img/layanan/Gadai.jpeg"
                   alt="Gadai Syariah"
-                  width={200}
-                  height={200}
+                  width={800}
+                  height={500}
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   className="w-full h-full object-cover object-left md:object-center group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
@@ -366,8 +371,9 @@ export default function HomeView() {
                 <Image
                   src="/img/layanan/Investasi Emas.jpeg"
                   alt="Investasi Emas"
-                  width={200}
-                  height={200}
+                  width={800}
+                  height={500}
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   className="w-full h-full object-cover object-right md:object-center group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
@@ -404,8 +410,9 @@ export default function HomeView() {
               <Image
                 src="/img/assets/Layanan.jpeg"
                 alt="Layanan Sosial Bhapedes"
-                width={200}
-                height={200}
+                width={900}
+                height={700}
+                sizes="(max-width: 768px) 100vw, 50vw"
                 className="w-full h-[420px] object-cover"
               />
             </div>
@@ -489,8 +496,9 @@ export default function HomeView() {
                       <Image
                         src={dataBerita[0].gambar}
                         alt={dataBerita[0].judul}
-                        width={200}
-                        height={200}
+                        width={900}
+                        height={560}
+                        sizes="(max-width: 1024px) 100vw, 66vw"
                         className="w-full h-[380px] object-cover group-hover:scale-105 transition duration-500"
                       />
                     </div>
@@ -520,8 +528,9 @@ export default function HomeView() {
                           <Image
                             src={item.gambar}
                             alt={item.judul}
-                            width={200}
-                            height={200}
+                            width={320}
+                            height={224}
+                            sizes="160px"
                             className="w-full h-full object-cover group-hover:scale-110 transition duration-500"
                           />
                         </div>

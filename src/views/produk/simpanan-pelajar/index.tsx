@@ -1,6 +1,5 @@
 import React from "react";
 import {
-  GraduationCap,
   HandCoins,
   ShieldCheck,
   Users,
@@ -41,11 +40,12 @@ export default function SimpananPelajarView() {
           {/* IMAGE */}
           <div className="relative">
             <Image
-              src="/img/assets/sipijar.jpg"
+              src="/img/layanan/Simpanan Pelajar.jpeg"
               alt="Simpanan Pelajar"
-              width={200}
-              height={200}
-              className="rounded-lg shadow-md border border-gray-200 w-full object-cover"
+              width={900}
+              height={620}
+              sizes="(max-width: 768px) 100vw, 50vw"
+              className="rounded-lg shadow-md border border-gray-200 w-full h-auto object-cover"
             />
             <div className="absolute -bottom-4 -right-4 w-20 h-20 border-b-4 border-r-4 border-[#f08519] rounded-br-lg" />
           </div>

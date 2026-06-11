@@ -77,8 +77,9 @@ export default function TentangView() {
                 <Image
                   src="/img/assets/Foto bersama.jpeg"
                   alt="Kantor KSPPS Bhapedes"
-                  width={200}
-                  height={200}
+                  width={900}
+                  height={700}
+                  sizes="(max-width: 768px) 100vw, 33vw"
                   className="w-full h-auto object-contain md:object-cover"
                 />
               </div>
