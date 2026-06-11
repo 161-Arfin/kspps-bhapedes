@@ -1,11 +1,23 @@
 "use client";
 
 import React from "react";
-import { Mail, MapPin, Phone } from "lucide-react";
+import { ChevronDown, Mail, MapPin, Phone } from "lucide-react";
 
 const ADMIN_WHATSAPP_NUMBER = "6285336260858";
+const layananOptions = [
+  "Simpanan Pelajar",
+  "Simpanan Walimah",
+  "Rahn/Gadai",
+  "Investasi Emas",
+  "Lainnya",
+];
 
 export default function KontakView() {
+  const [selectedLayanan, setSelectedLayanan] = React.useState(
+    layananOptions[0],
+  );
+  const [isLayananOpen, setIsLayananOpen] = React.useState(false);
+
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
@@ -92,17 +104,59 @@ export default function KontakView() {
                     <label className="block text-sm font-medium text-gray-700 mb-2">
                       Subjek
                     </label>
-                    <select
-                      name="layanan"
-                      required
-                      className="w-full border border-gray-300 px-4 py-2.5 rounded focus:outline-none focus:border-[#194e9e] transition-colors bg-white"
+                    <div
+                      className="relative"
+                      onBlur={(event) => {
+                        if (!event.currentTarget.contains(event.relatedTarget)) {
+                          setIsLayananOpen(false);
+                        }
+                      }}
                     >
-                      <option value="Simpanan Pelajar">Simpanan Pelajar</option>
-                      <option value="Simpanan Wlimah">Simpanan Walimah</option>
-                      <option value="Rahn/Gadai">Rahn/Gadai</option>
-                      <option value="Investasi Emas">Investasi Emas</option>
-                      <option value="Lainnya">Lainnya</option>
-                    </select>
+                      <input
+                        type="hidden"
+                        name="layanan"
+                        value={selectedLayanan}
+                      />
+                      <button
+                        type="button"
+                        onClick={() => setIsLayananOpen((value) => !value)}
+                        className={`flex w-full items-center justify-between rounded border bg-white px-4 py-2.5 text-left text-sm text-gray-800 transition-colors focus:outline-none ${
+                          isLayananOpen
+                            ? "border-[#194e9e] ring-2 ring-[#194e9e]/10"
+                            : "border-gray-300 hover:border-[#194e9e]"
+                        }`}
+                      >
+                        <span>{selectedLayanan}</span>
+                        <ChevronDown
+                          size={18}
+                          className={`text-[#194e9e] transition-transform ${
+                            isLayananOpen ? "rotate-180" : ""
+                          }`}
+                        />
+                      </button>
+
+                      {isLayananOpen && (
+                        <div className="absolute left-0 right-0 top-full z-30 mt-2 overflow-hidden rounded-md border border-gray-200 bg-white shadow-lg">
+                          {layananOptions.map((option) => (
+                            <button
+                              key={option}
+                              type="button"
+                              onClick={() => {
+                                setSelectedLayanan(option);
+                                setIsLayananOpen(false);
+                              }}
+                              className={`block w-full px-4 py-3 text-left text-sm font-medium transition-colors ${
+                                selectedLayanan === option
+                                  ? "bg-[#194e9e] text-white"
+                                  : "text-gray-800 hover:bg-[#194e9e]/5 hover:text-[#194e9e]"
+                              }`}
+                            >
+                              {option}
+                            </button>
+                          ))}
+                        </div>
+                      )}
+                    </div>
                   </div>
                 </div>
 

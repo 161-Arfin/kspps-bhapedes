@@ -1,29 +1,20 @@
 import React from "react";
 import Link from "next/link";
-import {
-  ShieldCheck,
-  Wallet,
-  Clock,
-  Gem,
-  ChevronRight
-} from "lucide-react";
+import { ShieldCheck, Wallet, Clock, Gem, ChevronRight } from "lucide-react";
+import Image from "next/image";
 
 export default function RahnView() {
   return (
     <div className="bg-white min-h-screen">
-
       {/* ================= HERO ================= */}
       <section className="bg-[#194e9e] py-12 text-white">
         <div className="max-w-7xl mx-auto px-6">
-
           <nav className="flex items-center gap-2 text-sm font-semibold uppercase text-green-200 mb-6">
             <Link href="/" className="text-white hover:text-[#194e9e]">
               Beranda
             </Link>
             <ChevronRight size={12} />
-            <span className="text-[#194e9e] font-semibold">
-              Rahn/Gadai
-            </span>
+            <span className="text-[#f08519] font-semibold">Rahn/Gadai</span>
           </nav>
 
           <h1 className="text-4xl md:text-5xl font-bold">
@@ -31,22 +22,22 @@ export default function RahnView() {
           </h1>
 
           <p className="mt-4 max-w-2xl text-green-100 leading-relaxed">
-            Solusi pembiayaan cepat berbasis prinsip syariah dengan
-            sistem gadai (rahn) yang aman, transparan, dan tanpa riba.
+            Solusi pembiayaan cepat berbasis prinsip syariah dengan sistem gadai
+            (rahn) yang aman, transparan, dan tanpa riba.
           </p>
-
         </div>
       </section>
 
       {/* ================= PENJELASAN ================= */}
       <section className="py-20">
         <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
-
           {/* IMAGE */}
           <div className="relative">
-            <img
+            <Image
               src="/img/assets/rahn.jpg"
               alt="Gadai Syariah"
+              width={200}
+              height={200}
               className="rounded-lg shadow-md border border-gray-200 w-full object-cover"
             />
             <div className="absolute -bottom-4 -right-4 w-20 h-20 border-b-4 border-r-4 border-[#f08519] rounded-br-lg" />
@@ -59,20 +50,19 @@ export default function RahnView() {
             </h2>
             <div className="w-16 h-1 bg-[#194e9e] mb-6 rounded" />
             <p className="text-gray-600 leading-relaxed mb-4">
-              Rahn merupakan layanan pembiayaan syariah dengan sistem
-              gadai dimana anggota dapat memperoleh dana tunai dengan
-              menjaminkan barang berharga sebagai jaminan.
+              Rahn merupakan layanan pembiayaan syariah dengan sistem gadai
+              dimana anggota dapat memperoleh dana tunai dengan menjaminkan
+              barang berharga sebagai jaminan.
             </p>
             <p className="text-gray-600 leading-relaxed mb-4">
-              Barang yang dijaminkan akan disimpan dengan aman oleh
-              koperasi hingga pembiayaan dilunasi. Sistem ini tidak
-              menggunakan bunga, melainkan biaya pemeliharaan
-              (ujrah) sesuai ketentuan syariah.
+              Barang yang dijaminkan akan disimpan dengan aman oleh koperasi
+              hingga pembiayaan dilunasi. Sistem ini tidak menggunakan bunga,
+              melainkan biaya pemeliharaan (ujrah) sesuai ketentuan syariah.
             </p>
             <p className="text-gray-600 leading-relaxed">
-              Layanan Rahn sangat membantu anggota yang membutuhkan
-              dana cepat untuk berbagai kebutuhan tanpa harus menjual
-              barang berharga yang dimiliki.
+              Layanan Rahn sangat membantu anggota yang membutuhkan dana cepat
+              untuk berbagai kebutuhan tanpa harus menjual barang berharga yang
+              dimiliki.
             </p>
           </div>
         </div>
@@ -81,7 +71,6 @@ export default function RahnView() {
       {/* ================= KEUNGGULAN ================= */}
       <section className="py-16 bg-[#F8FAF8]">
         <div className="max-w-6xl mx-auto px-6">
-
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-[#1A1A1A]">
               Keunggulan Gadai Syariah
@@ -90,15 +79,12 @@ export default function RahnView() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-
             <div className="bg-white p-6 rounded-lg border border-gray-100 shadow-sm text-center">
               <Wallet className="mx-auto text-[#194e9e] mb-4" size={32} />
-              <h3 className="font-bold text-gray-800 mb-2">
-                Proses Cepat
-              </h3>
+              <h3 className="font-bold text-gray-800 mb-2">Proses Cepat</h3>
               <p className="text-gray-500 text-sm">
-                Pengajuan pembiayaan dapat diproses dengan cepat
-                setelah barang jaminan dinilai.
+                Pengajuan pembiayaan dapat diproses dengan cepat setelah barang
+                jaminan dinilai.
               </p>
             </div>
 
@@ -108,22 +94,18 @@ export default function RahnView() {
                 Aman & Terpercaya
               </h3>
               <p className="text-gray-500 text-sm">
-                Barang jaminan disimpan secara aman hingga
-                pembiayaan dilunasi.
+                Barang jaminan disimpan secara aman hingga pembiayaan dilunasi.
               </p>
             </div>
 
             <div className="bg-white p-6 rounded-lg border border-gray-100 shadow-sm text-center">
               <Clock className="mx-auto text-[#194e9e] mb-4" size={32} />
-              <h3 className="font-bold text-gray-800 mb-2">
-                Fleksibel
-              </h3>
+              <h3 className="font-bold text-gray-800 mb-2">Fleksibel</h3>
               <p className="text-gray-500 text-sm">
-                Jangka waktu pembiayaan dapat disesuaikan
-                dengan kemampuan anggota.
+                Jangka waktu pembiayaan dapat disesuaikan dengan kemampuan
+                anggota.
               </p>
             </div>
-
           </div>
         </div>
       </section>
@@ -172,7 +154,6 @@ export default function RahnView() {
           </div>
         </div>
       </section> */}
-
     </div>
   );
 }

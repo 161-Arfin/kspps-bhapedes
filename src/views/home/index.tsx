@@ -13,6 +13,7 @@ import {
 import { beritaService } from "@/services/beritaService";
 import { heroService } from "@/services/heroService";
 import { Berita, Hero } from "@/types";
+import Image from "next/image";
 
 interface CounterProps {
   value: number;
@@ -106,9 +107,11 @@ export default function HomeView() {
           >
             {dataHero.map((hero, index) => (
               <div key={index} className="min-w-full h-full relative">
-                <img
+                <Image
                   src="/img/assets/cover.jpeg"
                   alt={hero.judul}
+                  fill
+                  priority
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-black/40" />
@@ -232,9 +235,11 @@ export default function HomeView() {
             {/* Gold accent corner */}
             <div className="absolute -top-3 -left-3 w-16 h-16 border-t-4 border-l-4 border-[#f08519] rounded-tl-md z-10" />
             <div className="absolute -bottom-3 -right-3 w-16 h-16 border-b-4 border-r-4 border-[#f08519] rounded-br-md z-10" />
-            <img
+            <Image
               src="/img/assets/Pelayanan.jpeg"
               alt="Kegiatan Bhapedes"
+              width={200}
+              height={200}
               className="rounded-md shadow-md w-full object-cover border border-gray-200"
             />
           </div>
@@ -265,9 +270,11 @@ export default function HomeView() {
             {/* 1 - SIMPANAN PELAJAR */}
             <div className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group border border-gray-100">
               <div className="relative h-56 overflow-hidden">
-                <img
+                <Image
                   src="/img/layanan/Simpanan Pelajar.jpeg"
                   alt="Simpanan Pelajar"
+                  width={200}
+                  height={200}
                   className="w-full h-full object-cover object-left md:object-center group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
@@ -294,9 +301,11 @@ export default function HomeView() {
             {/* 2 - SIMPANAN WALIMAH */}
             <div className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group border border-gray-100">
               <div className="relative h-56 overflow-hidden">
-                <img
+                <Image
                   src="/img/layanan/Simpanan Walimah.jpeg"
                   alt="Simpanan Walimah"
+                  width={200}
+                  height={200}
                   className="w-full h-full object-cover object-right md:object-center group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
@@ -323,9 +332,11 @@ export default function HomeView() {
             {/* 3 - GADAI */}
             <div className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group border border-gray-100">
               <div className="relative h-56 overflow-hidden">
-                <img
+                <Image
                   src="/img/layanan/Gadai.jpeg"
                   alt="Gadai Syariah"
+                  width={200}
+                  height={200}
                   className="w-full h-full object-cover object-left md:object-center group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
@@ -352,9 +363,11 @@ export default function HomeView() {
             {/* 4 - INVESTASI EMAS */}
             <div className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group border border-gray-100">
               <div className="relative h-56 overflow-hidden">
-                <img
+                <Image
                   src="/img/layanan/Investasi Emas.jpeg"
                   alt="Investasi Emas"
+                  width={200}
+                  height={200}
                   className="w-full h-full object-cover object-right md:object-center group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
@@ -388,9 +401,11 @@ export default function HomeView() {
             <div className="rounded-xl overflow-hidden shadow-md relative">
               {/* Gold corner accent */}
               <div className="absolute top-0 left-0 w-full h-1 bg-[#f08519] z-10" />
-              <img
+              <Image
                 src="/img/assets/Layanan.jpeg"
                 alt="Layanan Sosial Bhapedes"
+                width={200}
+                height={200}
                 className="w-full h-[420px] object-cover"
               />
             </div>
@@ -471,9 +486,11 @@ export default function HomeView() {
                       <div className="absolute top-4 left-4 z-10 bg-[#f08519] text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">
                         Terbaru
                       </div>
-                      <img
+                      <Image
                         src={dataBerita[0].gambar}
                         alt={dataBerita[0].judul}
+                        width={200}
+                        height={200}
                         className="w-full h-[380px] object-cover group-hover:scale-105 transition duration-500"
                       />
                     </div>
@@ -500,9 +517,11 @@ export default function HomeView() {
                     {dataBerita.slice(1).map((item) => (
                       <article key={item.id} className="flex gap-6 py-4 group">
                         <div className="w-40 h-28 flex-shrink-0 overflow-hidden rounded-md">
-                          <img
+                          <Image
                             src={item.gambar}
                             alt={item.judul}
+                            width={200}
+                            height={200}
                             className="w-full h-full object-cover group-hover:scale-110 transition duration-500"
                           />
                         </div>

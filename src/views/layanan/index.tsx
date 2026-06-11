@@ -11,31 +11,33 @@ import {
   ChevronRight,
   ChevronLeft,
   CheckCircle2,
-  AlertCircle
+  AlertCircle,
+  Import,
 } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 const ziswafItems = [
   {
     title: "Zakat",
     desc: "Tunaikan kewajiban zakat mal maupun zakat fitrah Anda untuk menyucikan harta dan membantu asnaf yang membutuhkan.",
-    icon: <CheckCircle2 className="mx-auto text-[#194e9e] mb-4" size={32} />
+    icon: <CheckCircle2 className="mx-auto text-[#194e9e] mb-4" size={32} />,
   },
   {
     title: "Infaq",
     desc: "Berikan kontribusi terbaik untuk kemaslahatan umat melalui program-program sosial yang berkelanjutan.",
-    icon: <Heart className="mx-auto text-[#194e9e] mb-4" size={32} />
+    icon: <Heart className="mx-auto text-[#194e9e] mb-4" size={32} />,
   },
   {
     title: "Shadaqah",
     desc: "Amalan sunnah yang membawa keberkahan, mulai dari senyuman hingga bantuan materi bagi sesama.",
-    icon: <Gift className="mx-auto text-[#194e9e] mb-4" size={32} />
+    icon: <Gift className="mx-auto text-[#194e9e] mb-4" size={32} />,
   },
   {
     title: "Wakaf",
     desc: "Investasi akhirat dengan manfaat yang terus mengalir melalui pengelolaan aset produktif untuk umat.",
-    icon: <Sprout className="mx-auto text-[#194e9e] mb-4" size={32} />
-  }
+    icon: <Sprout className="mx-auto text-[#194e9e] mb-4" size={32} />,
+  },
 ];
 
 const socialPrograms = [
@@ -43,47 +45,49 @@ const socialPrograms = [
     title: "Pendidikan Umat",
     desc: "Beasiswa dan sarana belajar bagi anak-anak dhuafa berprestasi untuk masa depan yang lebih baik.",
     icon: <BookOpen className="text-[#194e9e] mb-4" size={40} />,
-    stats: "500+ Penerima Manfaat"
+    stats: "500+ Penerima Manfaat",
   },
   {
     title: "Kesehatan Terpadu",
     desc: "Layanan kesehatan gratis dan subsidi bagi anggota dan masyarakat yang membutuhkan.",
     icon: <Stethoscope className="text-[#194e9e] mb-4" size={40} />,
-    stats: "20+ Lokasi Layanan"
+    stats: "20+ Lokasi Layanan",
   },
   {
     title: "Ekonomi Produktif",
     desc: "Pemberdayaan UMKM melalui modal kerja dan pendampingan usaha berbasis komunitas.",
     icon: <Briefcase className="text-[#194e9e] mb-4" size={40} />,
-    stats: "100+ UMKM Binaan"
+    stats: "100+ UMKM Binaan",
   },
   {
     title: "Bantuan Kemanusiaan",
     desc: "Tanggap darurat bencana dan bantuan sosial mendesak bagi korban bencana alam.",
     icon: <AlertCircle className="text-[#194e9e] mb-4" size={40} />,
-    stats: "Quick Response Team"
-  }
+    stats: "Quick Response Team",
+  },
 ];
 
 const gallerySlides = [
   {
-    image: "/img/layanansos.jpg",
+    image: "/Image/layanansos.jpg",
     title: "Penyaluran Bantuan Sembako Berkah",
     tag: "Featured Activity",
-    desc: "Program rutin penyaluran bantuan pangan bagi kaum dhuafa dan lansia di wilayah sekitar."
+    desc: "Program rutin penyaluran bantuan pangan bagi kaum dhuafa dan lansia di wilayah sekitar.",
   },
   {
-    image: "https://images.unsplash.com/photo-1593113598332-cd288d649433?q=80&w=2070&auto=format&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1593113598332-cd288d649433?q=80&w=2070&auto=format&fit=crop",
     title: "Pemberdayaan Ekonomi Dhuafa",
     tag: "Social Impact",
-    desc: "Pemberian modal usaha dan pendampingan bagi masyarakat kurang mampu untuk kemandirian ekonomi."
+    desc: "Pemberian modal usaha dan pendampingan bagi masyarakat kurang mampu untuk kemandirian ekonomi.",
   },
   {
-    image: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=2013&auto=format&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=2013&auto=format&fit=crop",
     title: "Program Ramadhan Berbagi",
     tag: "Seasonal Program",
-    desc: "Kebersamaan dalam berbagi kebahagiaan di bulan suci melalui buka puasa bersama dan santunan."
-  }
+    desc: "Kebersamaan dalam berbagi kebahagiaan di bulan suci melalui buka puasa bersama dan santunan.",
+  },
 ];
 
 export default function LayananView() {
@@ -96,8 +100,12 @@ export default function LayananView() {
     return () => clearInterval(timer);
   }, []);
 
-  const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % gallerySlides.length);
-  const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + gallerySlides.length) % gallerySlides.length);
+  const nextSlide = () =>
+    setCurrentSlide((prev) => (prev + 1) % gallerySlides.length);
+  const prevSlide = () =>
+    setCurrentSlide(
+      (prev) => (prev - 1 + gallerySlides.length) % gallerySlides.length,
+    );
 
   return (
     <div className="bg-white min-h-screen">
@@ -106,9 +114,26 @@ export default function LayananView() {
         <div className="absolute inset-0 opacity-10 pointer-events-none">
           <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
             <defs>
-              <pattern id="islamic-grid" width="100" height="100" patternUnits="userSpaceOnUse">
-                <path d="M50 0 L100 50 L50 100 L0 50 Z" fill="none" stroke="white" strokeWidth="1" />
-                <circle cx="50" cy="50" r="20" fill="none" stroke="white" strokeWidth="1" />
+              <pattern
+                id="islamic-grid"
+                width="100"
+                height="100"
+                patternUnits="userSpaceOnUse"
+              >
+                <path
+                  d="M50 0 L100 50 L50 100 L0 50 Z"
+                  fill="none"
+                  stroke="white"
+                  strokeWidth="1"
+                />
+                <circle
+                  cx="50"
+                  cy="50"
+                  r="20"
+                  fill="none"
+                  stroke="white"
+                  strokeWidth="1"
+                />
               </pattern>
             </defs>
             <rect width="100%" height="100%" fill="url(#islamic-grid)" />
@@ -125,10 +150,13 @@ export default function LayananView() {
               Layanan Sosial
             </span>
             <h1 className="text-4xl md:text-6xl font-extrabold text-white mb-6 leading-tight">
-              Peduli Sesama Bersama Bhapedes Melalui <span className="text-[#f08519]">ZISWAF</span>
+              Peduli Sesama Bersama Bhapedes Melalui{" "}
+              <span className="text-[#f08519]">ZISWAF</span>
             </h1>
             <p className="max-w-2xl text-lg md:text-xl text-green-50/90 leading-relaxed">
-              Wujudkan kepedulian Anda bersama KSPPS BHAPEDES melalui pengelolaan Zakat, Infaq, Shadaqah, dan Wakaf yang profesional dan tepat sasaran.
+              Wujudkan kepedulian Anda bersama KSPPS BHAPEDES melalui
+              pengelolaan Zakat, Infaq, Shadaqah, dan Wakaf yang profesional dan
+              tepat sasaran.
             </p>
           </div>
         </div>
@@ -170,8 +198,8 @@ export default function LayananView() {
             </h2>
             <div className="w-16 h-1 bg-[#194e9e] mx-auto mt-4 rounded" />
             <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
-              Komitmen kami dalam menyalurkan dana sosial melalui program
-              yang memberikan dampak nyata dan berkelanjutan.
+              Komitmen kami dalam menyalurkan dana sosial melalui program yang
+              memberikan dampak nyata dan berkelanjutan.
             </p>
           </div>
 
@@ -191,9 +219,7 @@ export default function LayananView() {
                     {program.desc}
                   </p>
                   <div className="flex justify-between items-center text-sm border-t border-gray-100 pt-4">
-                    <span className="text-gray-500">
-                      Capaian Program
-                    </span>
+                    <span className="text-gray-500">Capaian Program</span>
                     <span className="font-bold text-[#194e9e]">
                       {program.stats}
                     </span>
@@ -210,11 +236,13 @@ export default function LayananView() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-[#1A1A1A] mb-4">
-              Dokumentasi & <span className="text-[#f08519]">Dampak Sosial</span>
+              Dokumentasi &{" "}
+              <span className="text-[#f08519]">Dampak Sosial</span>
             </h2>
             <div className="w-16 h-1 bg-[#194e9e] mx-auto mt-2 mb-4 rounded" />
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Setiap rupiah yang Anda amanahkan dikelola dengan transparan untuk memberikan manfaat nyata bagi yang membutuhkan.
+              Setiap rupiah yang Anda amanahkan dikelola dengan transparan untuk
+              memberikan manfaat nyata bagi yang membutuhkan.
             </p>
           </div>
 
@@ -227,7 +255,7 @@ export default function LayananView() {
               >
                 {gallerySlides.map((slide, idx) => (
                   <div key={idx} className="min-w-full h-full relative">
-                    <img
+                    <Image
                       src={slide.image}
                       alt={slide.title}
                       className="w-full h-full object-cover"
@@ -275,23 +303,29 @@ export default function LayananView() {
             {/* Side Photos */}
             <div className="flex flex-col gap-6">
               <div className="group relative overflow-hidden rounded-xl shadow-md h-[188px] md:h-[238px] border border-gray-200">
-                <img
+                <Image
                   src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=2070&auto=format&fit=crop"
                   alt="Edukasi Anak Dhuafa"
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center p-6 text-center">
-                  <p className="text-white font-bold">Program Pendidikan & Literasi Umat</p>
+                  <p className="text-white font-bold">
+                    Program Pendidikan & Literasi Umat
+                  </p>
                 </div>
               </div>
               <div className="group relative overflow-hidden rounded-xl shadow-md h-[188px] md:h-[238px] border border-gray-200">
-                <img
+                <Image
                   src="https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?q=80&w=1932&auto=format&fit=crop"
                   alt="Layanan Kesehatan"
+                  width={200}
+                  height={200}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center p-6 text-center">
-                  <p className="text-white font-bold">Pemeriksaan Kesehatan Gratis Berkala</p>
+                  <p className="text-white font-bold">
+                    Pemeriksaan Kesehatan Gratis Berkala
+                  </p>
                 </div>
               </div>
             </div>
@@ -310,17 +344,30 @@ export default function LayananView() {
               <div className="w-16 h-1 bg-[#f08519] mb-8 rounded" />
               <div className="space-y-6">
                 {[
-                  { title: "Kunjungi Kantor Cabang", desc: "Anda dapat langsung datang ke kantor cabang KSPPS BHAPEDES terdekat di kota Anda." },
-                  { title: "Transfer Bank", desc: "Kemudahan berdonasi melalui transfer antar bank ke rekening resmi Baitul Maal KSPPS BHAPEDES." },
-                  { title: "Layanan Jemput Zakat", desc: "Tim kami siap menjemput donasi Anda untuk wilayah tertentu demi kenyamanan Anda." }
+                  {
+                    title: "Kunjungi Kantor Cabang",
+                    desc: "Anda dapat langsung datang ke kantor cabang KSPPS BHAPEDES terdekat di kota Anda.",
+                  },
+                  {
+                    title: "Transfer Bank",
+                    desc: "Kemudahan berdonasi melalui transfer antar bank ke rekening resmi Baitul Maal KSPPS BHAPEDES.",
+                  },
+                  {
+                    title: "Layanan Jemput Zakat",
+                    desc: "Tim kami siap menjemput donasi Anda untuk wilayah tertentu demi kenyamanan Anda.",
+                  },
                 ].map((step, idx) => (
                   <div key={idx} className="flex gap-4">
                     <div className="w-10 h-10 rounded-full bg-[#194e9e] text-white flex items-center justify-center font-bold shrink-0">
                       {idx + 1}
                     </div>
                     <div>
-                      <h4 className="font-bold text-gray-800 mb-1">{step.title}</h4>
-                      <p className="text-gray-500 text-sm leading-relaxed">{step.desc}</p>
+                      <h4 className="font-bold text-gray-800 mb-1">
+                        {step.title}
+                      </h4>
+                      <p className="text-gray-500 text-sm leading-relaxed">
+                        {step.desc}
+                      </p>
                     </div>
                   </div>
                 ))}

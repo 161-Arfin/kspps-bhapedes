@@ -4,18 +4,17 @@ import {
   HandCoins,
   ShieldCheck,
   Users,
-  ChevronRight
+  ChevronRight,
 } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function SimpananPelajarView() {
   return (
     <div className="bg-white min-h-screen">
-
       {/* ================= HERO ================= */}
       <section className="bg-[#194e9e] py-12 text-white">
         <div className="max-w-7xl mx-auto px-6">
-
           <nav className="flex items-center gap-2 text-sm font-semibold uppercase text-green-200 mb-6">
             <Link href="/" className="text-white hover:text-[#f08519]">
               Beranda
@@ -26,14 +25,12 @@ export default function SimpananPelajarView() {
             </span>
           </nav>
 
-          <h1 className="text-4xl md:text-5xl font-bold">
-            Simpanan Pelajar
-          </h1>
+          <h1 className="text-4xl md:text-5xl font-bold">Simpanan Pelajar</h1>
 
           <p className="mt-4 max-w-3xl text-green-100 leading-relaxed">
-            Program tabungan khusus bagi pelajar untuk menumbuhkan
-            kebiasaan menabung sejak dini dengan sistem pengelolaan
-            yang aman, transparan, dan sesuai prinsip syariah.
+            Program tabungan khusus bagi pelajar untuk menumbuhkan kebiasaan
+            menabung sejak dini dengan sistem pengelolaan yang aman, transparan,
+            dan sesuai prinsip syariah.
           </p>
         </div>
       </section>
@@ -41,12 +38,13 @@ export default function SimpananPelajarView() {
       {/* ================= PENJELASAN ================= */}
       <section className="py-20">
         <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
-
           {/* IMAGE */}
           <div className="relative">
-            <img
+            <Image
               src="/img/assets/sipijar.jpg"
               alt="Simpanan Pelajar"
+              width={200}
+              height={200}
               className="rounded-lg shadow-md border border-gray-200 w-full object-cover"
             />
             <div className="absolute -bottom-4 -right-4 w-20 h-20 border-b-4 border-r-4 border-[#f08519] rounded-br-lg" />
@@ -60,21 +58,20 @@ export default function SimpananPelajarView() {
             <div className="w-16 h-1 bg-[#194e9e] mb-6 rounded" />
             <p className="text-gray-600 leading-relaxed mb-4">
               Simpanan Pelajar merupakan produk tabungan yang diperuntukkan
-              khusus bagi siswa atau pelajar sebagai sarana belajar
-              mengelola keuangan sejak usia dini. Melalui program ini,
-              pelajar dapat menabung secara rutin dengan nominal yang
-              ringan dan fleksibel.
+              khusus bagi siswa atau pelajar sebagai sarana belajar mengelola
+              keuangan sejak usia dini. Melalui program ini, pelajar dapat
+              menabung secara rutin dengan nominal yang ringan dan fleksibel.
             </p>
             <p className="text-gray-600 leading-relaxed mb-4">
-              Program ini juga menjadi bagian dari edukasi literasi
-              keuangan syariah agar generasi muda memahami pentingnya
-              menabung, merencanakan keuangan, serta menghindari
-              praktik keuangan yang tidak sesuai prinsip syariah.
+              Program ini juga menjadi bagian dari edukasi literasi keuangan
+              syariah agar generasi muda memahami pentingnya menabung,
+              merencanakan keuangan, serta menghindari praktik keuangan yang
+              tidak sesuai prinsip syariah.
             </p>
             <p className="text-gray-600 leading-relaxed">
-              Dengan Simpanan Pelajar, orang tua dan sekolah juga dapat
-              ikut berperan dalam membangun kebiasaan finansial yang
-              sehat bagi anak sejak dini.
+              Dengan Simpanan Pelajar, orang tua dan sekolah juga dapat ikut
+              berperan dalam membangun kebiasaan finansial yang sehat bagi anak
+              sejak dini.
             </p>
           </div>
         </div>
@@ -83,7 +80,6 @@ export default function SimpananPelajarView() {
       {/* ================= KEUNGGULAN ================= */}
       <section className="py-16 bg-[#F8FAF8]">
         <div className="max-w-6xl mx-auto px-6">
-
           <div className="text-center mb-6">
             <h2 className="text-3xl font-bold text-[#1A1A1A]">
               Keunggulan Simpanan Pelajar
@@ -92,26 +88,21 @@ export default function SimpananPelajarView() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-
             <div className="bg-white p-6 rounded-lg border border-gray-100 shadow-sm text-center">
               <HandCoins className="mx-auto text-[#194e9e] mb-4" size={32} />
-              <h3 className="font-bold text-gray-800 mb-2">
-                Setoran Ringan
-              </h3>
+              <h3 className="font-bold text-gray-800 mb-2">Setoran Ringan</h3>
               <p className="text-gray-500 text-sm">
-                Setoran tabungan dapat dilakukan dengan nominal ringan
-                sehingga mudah dijangkau oleh para pelajar.
+                Setoran tabungan dapat dilakukan dengan nominal ringan sehingga
+                mudah dijangkau oleh para pelajar.
               </p>
             </div>
 
             <div className="bg-white p-6 rounded-lg border border-gray-100 shadow-sm text-center">
               <ShieldCheck className="mx-auto text-[#194e9e] mb-4" size={32} />
-              <h3 className="font-bold text-gray-800 mb-2">
-                Aman & Syariah
-              </h3>
+              <h3 className="font-bold text-gray-800 mb-2">Aman & Syariah</h3>
               <p className="text-gray-500 text-sm">
-                Dikelola dengan sistem keuangan syariah yang aman,
-                transparan, serta bebas riba.
+                Dikelola dengan sistem keuangan syariah yang aman, transparan,
+                serta bebas riba.
               </p>
             </div>
 
@@ -121,11 +112,10 @@ export default function SimpananPelajarView() {
                 Edukasi Finansial
               </h3>
               <p className="text-gray-500 text-sm">
-                Membantu pelajar belajar mengatur keuangan dan
-                membangun kebiasaan menabung sejak usia dini.
+                Membantu pelajar belajar mengatur keuangan dan membangun
+                kebiasaan menabung sejak usia dini.
               </p>
             </div>
-
           </div>
         </div>
       </section>
@@ -174,7 +164,6 @@ export default function SimpananPelajarView() {
           </div>
         </div>
       </section> */}
-
     </div>
   );
 }

@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function TentangView() {
   return (
@@ -73,9 +74,11 @@ export default function TentangView() {
             <div className="md:col-span-1">
               <div className="relative rounded-xl overflow-hidden shadow-lg">
                 <div className="absolute top-0 left-0 w-full h-1 bg-[#f08519] z-10" />
-                <img
+                <Image
                   src="/img/assets/Foto bersama.jpeg"
                   alt="Kantor KSPPS Bhapedes"
+                  width={200}
+                  height={200}
                   className="w-full h-auto object-contain md:object-cover"
                 />
               </div>

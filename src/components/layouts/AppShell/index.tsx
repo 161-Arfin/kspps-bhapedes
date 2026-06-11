@@ -1,5 +1,6 @@
 import Navbar from "../navbar";
 import Footer from "../footer";
+import FloatingWhatsapp from "../FloatingWhatsapp";
 import { useRouter } from "next/router";
 
 type AppShellProps = {
@@ -18,6 +19,7 @@ const AppShell = (props: AppShellProps) => {
       {!isAdminRoute && !is404Route && <Navbar />}
       {children}
       {!isAdminRoute && !is404Route && <Footer />}
+      {!isAdminRoute && !is404Route && <FloatingWhatsapp />}
     </main>
   );
 };
