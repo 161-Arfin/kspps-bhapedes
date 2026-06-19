@@ -7,12 +7,15 @@ export default function BeritaDetailPage() {
   const router = useRouter();
   const { slug } = router.query;
 
-  // Render detail view only when slug is available from the router
   return (
     <>
       <Head>
-        <title>Detail Berita | KSPPS BMT Nurul Barakah</title>
-        <meta name="description" content="Baca detail berita dan pengumuman terbaru dari KSPPS BMT Nurul Barakah." />
+        <title>Berita | KSPPS BHAPEDES</title>
+        <meta
+          name="description"
+          content="Dapatkan informasi terbaru mengenai kegiatan, edukasi ekonomi syariah, dan kabar terbaru dari KSPPS BHAPEDES."
+        />
+        <link rel="canonical" href="https://bhapedes.id/berita" />
       </Head>
       {slug ? (
         <BeritaDetailView slugOrId={slug as string} />
